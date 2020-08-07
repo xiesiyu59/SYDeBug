@@ -34,7 +34,7 @@
         make.width.mas_equalTo(kScreenWidth/3);
     }];
     
-    [NumberAnimation numAnimationControl:leftButton start:@"0" end:@"200" type:1];
+    [NumberAnimation numAnimationControl:leftButton start:@"0.00" end:@"200.00" type:0];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightButton setTitle:@"读取" forState:UIControlStateNormal];
