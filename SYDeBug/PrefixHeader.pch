@@ -1,0 +1,57 @@
+//
+//  PrefixHeader.pch
+//  SYDeBug
+//
+//  Created by xiesiyu on 2019/10/29.
+//  Copyright © 2019 xiesiyu. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <FMDatabase.h>
+#import <AFNetworking/AFNetworking.h>
+#import <YYKit.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <GBDeviceInfo.h>
+#import <SDWebImageManager.h>
+#import "UIViewController+Category.h"
+#import <MJRefresh.h>
+
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...)  fprintf(stderr,"<%s %d>:%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
+#else
+#define NSLog(FORMAT, ...)  nil
+#endif
+
+
+#define UrlWithString(str) [NSURL URLWithString:str]
+#define FontWithSize(size) [UIFont systemFontOfSize:size]
+#define BoldFontWithSize(size) [UIFont systemFontOfSize:size]
+#define MyString(string, ...) [NSString stringWithFormat:@"%@",string]
+#define String(fmt, ...) [NSString stringWithFormat:fmt,##__VA_ARGS__]
+#define IMG(name)           [UIImage imageNamed:name]
+
+
+//屏幕宽高
+#define kOnePx                          (kScreenScale > 0.0 ? 1.0 / kScreenScale : 1.0)
+
+//获取导航栏高度
+#define kStatusBarSpeac [[UIApplication sharedApplication] statusBarFrame].size.height
+//适配刘海屏导航栏高度
+#define kScreenTopIsX (44+kStatusBarSpeac)
+//适配刘海屏底部安全高度
+#define kScreenBottomIsX    (kScreenHeight >= 812.0 ? 34 : 0)
+
+//RGB颜色
+#define GkColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define kColorWithRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+//NSBundle添加图片
+#define ImageWithName(name)[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForAuxiliaryExecutable:name]]
+
+
+#endif /* PrefixHeader_pch */

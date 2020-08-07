@@ -6,9 +6,11 @@
 //  Copyright © 2019 xiesiyu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "BaseViewController.h"
+
+@interface ViewController : BaseViewController
+
 
 
 @end
