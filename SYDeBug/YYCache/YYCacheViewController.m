@@ -262,7 +262,7 @@
         }];
     }else if(sender.tag == 6){
         
-        [SYPromptOptionView showWithBottomContentStr:@"提示选项框" successTitle:@"确定" successBlock:^{
+        [SYPromptOptionView showWithContentStr:@"提示选项框" successTitle:@"确定" successBlock:^{
             NSLog(@"成功");
         }cancelTitle:@"" cancelBlock:nil];
     }
