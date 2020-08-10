@@ -177,7 +177,7 @@ static NSString *identifier = @"cell";
         }];
         
     }else if (type == LoadTypeSuspend){
-        [[SYDownloaderManger shareDownloaderManger]pauseloadWithUrl:loadUrl];
+        [[SYDownloaderManger shareDownloaderManger] pauseloadWithUrl:loadUrl];
     }else if (type == LoadTypeContinue){
         
     }

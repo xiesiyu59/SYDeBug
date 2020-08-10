@@ -58,17 +58,22 @@
 
 - (void)setPresent:(CGFloat)present{
     _present = present;
-    
+    NSLog(@"%f",present);
     if (present == 100) {
         self.titleLabel.text = @"下载完成";
     }else{
+        
         self.titleLabel.text = [NSString stringWithFormat:@"%.0f％",present];
+        if (!self.isDownlod) {
+            self.titleLabel.text = @"继续";
+        }
     }
-    
     self.titleLabel.colorRatio = present /100;
     [self.loadView mas_updateConstraints:^(MASConstraintMaker *make) {
          make.width.mas_equalTo(self.frame.size.width/100*present);
     }];
+    
+    
 }
 
 - (void)setIsDownlod:(BOOL)isDownlod{
@@ -78,13 +83,6 @@
     self.titleLabel.textColor = [UIColor orangeColor];
     [self setLXBorderWidth:1 borderColor:[UIColor orangeColor]];
     
-    if (isDownlod) {
-        self.titleLabel.text = [NSString stringWithFormat:@"%.0f％",self.present];
-    }else{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.titleLabel.text = @"继续";
-        });
-    }
 }
 
 
