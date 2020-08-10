@@ -14,6 +14,7 @@
 @interface SYiCarouselViewController () <iCarouselDataSource,iCarouselDelegate>
 
 @property (nonatomic, strong)iCarousel *syiCarousel;
+@property (nonatomic, strong)UIPageControl *pageControl;
 @property (nonatomic, strong)NSMutableArray *dataSource;
 
 @end
@@ -57,6 +58,25 @@
     [self.view addSubview:self.syiCarousel];
     
     
+    self.pageControl = [[UIPageControl alloc] init];
+    self.pageControl.backgroundColor = [UIColor lightGrayColor];
+    self.pageControl.pageIndicatorTintColor = [UIColor orangeColor];//未选中的颜色
+    self.pageControl.currentPageIndicatorTintColor = [UIColor redColor];//选中时的颜色
+    self.pageControl.numberOfPages = self.dataSource.count;
+    self.pageControl.currentPage = 0;
+    
+//    [self.pageControl setValue:[UIImage imageNamed:@"icon_select_dots"] forKeyPath:@"_currentPageImage"];
+//    [self.pageControl setValue:[UIImage imageNamed:@"icon_dot"] forKeyPath:@"_pageImage"];
+    
+    [self.pageControl addTarget:self action:@selector(updatePage:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.pageControl];
+    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.syiCarousel.mas_bottom);
+        make.left.right.equalTo(self.view);
+        make.height.mas_equalTo(20);
+    }];
+
+    
     //内容
     NSString *agrestString = @"《用户协议》";
     NSString *privacyString = @"《隐私条款》";
@@ -88,12 +108,6 @@
         make.right.equalTo(self.syiCarousel).offset(-16);
         make.height.mas_equalTo(200);
     }];
-    
-    
-    
-    
-    
-    
     
     
 }
@@ -137,7 +151,6 @@
     }else{
         transform = CATransform3DScale(transform, min_scale, min_scale, 1);
     }
-    
     return CATransform3DTranslate(transform, offset * self.syiCarousel.itemWidth * 1.4, 0.0, 0.0);
 }
 
@@ -148,6 +161,18 @@
         return YES;
     }
     return value;
+}
+
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+    
+    self.pageControl.currentPage = carousel.currentItemIndex;
+    
+}
+
+- (void)updatePage:(UIPageControl *)pageControl {
+    
+    NSLog(@"%ld",self.pageControl.currentPage);
+    [self.syiCarousel scrollToItemAtIndex:self.pageControl.currentPage animated:YES];
 }
 
 
