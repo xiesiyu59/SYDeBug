@@ -77,7 +77,7 @@ static NSString *identifier = @"cell";
     }else{
         
        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             if (self.indexPage == 2) {
                 [self.xsyTableView.mj_footer endRefreshingWithNoMoreData];
@@ -98,17 +98,24 @@ static NSString *identifier = @"cell";
 - (void)initWithInitialization {
     
     
-    self.xsyTableView = [[TableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    self.xsyTableView = [[TableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.xsyTableView.contentInset = UIEdgeInsetsMake(kHeaderImageHeight, 0, 0, 0);
     self.xsyTableView.delegate = self;
     self.xsyTableView.dataSource = self;
     self.xsyTableView.tableFooterView = [UIView new];
     [self.xsyTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
     [self.view addSubview:self.xsyTableView];
+    [self.xsyTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kHeaderImageHeight)];
+    self.headerView = [[UIView alloc] initWithFrame:CGRectZero];
     self.headerView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.headerView];
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.xsyTableView.mas_width);
+        make.height.mas_equalTo(kHeaderImageHeight);
+    }];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"按钮" forState:UIControlStateNormal];
@@ -118,6 +125,7 @@ static NSString *identifier = @"cell";
         make.top.equalTo(self.headerView).offset(40);
         make.left.equalTo(self.headerView).offset(16);
         make.size.mas_equalTo(CGSizeMake(40, 40));
+        
     }];
     
     
@@ -216,6 +224,7 @@ static NSString *identifier = @"cell";
 - (void)buttonClick:(UIButton *)sender{
     
     NSLog(@"点击");
+    [self screen];
 }
 
 @end

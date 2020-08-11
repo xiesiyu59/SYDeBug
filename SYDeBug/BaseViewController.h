@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 导航栏隐藏显示
 - (BOOL)sy_preferredNavigationBarHidden;
 
+/// 屏幕横屏
+- (void)screen;
 
 @end
 

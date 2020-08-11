@@ -8,8 +8,12 @@
 
 #import "BaseViewController.h"
 #import <FDFullscreenPopGesture-umbrella.h>
+#import "AppDelegate.h"
+
 
 @interface BaseViewController ()
+
+@property (nonatomic, assign)BOOL fullScreen;
 
 @end
 
@@ -87,6 +91,39 @@
 }
 
 
+
+- (void)setNewOrientation:(BOOL)fullscreen{
+    if (fullscreen) {
+        NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+        [[UIDevice currentDevice] setValue:resetOrientationTarget forKey:@"orientation"];
+        
+        NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeRight];
+        [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+    }else{
+        NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+        [[UIDevice currentDevice] setValue:resetOrientationTarget forKey:@"orientation"];
+        
+        NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+    }
+}
+
+//横竖屏切换按钮方法
+-(void)screen{
+    //记着#import "AppDelegate.h"
+    AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (self.fullScreen) {//横屏情况下，点击此按钮变为竖屏
+        appDelegate.allowRotation = NO;//设置竖屏
+        [self setNewOrientation:NO];//调用转屏代码
+        self.fullScreen = NO;
+        self.navigationController.navigationBar.hidden = NO;//navbar消失
+    }else{//竖屏情况下，点击此按钮变为横屏
+        appDelegate.allowRotation = YES;////设置横屏
+        [self setNewOrientation:YES];////调用转屏代码
+        self.navigationController.navigationBar.hidden = YES;//navbar出现
+        self.fullScreen = YES;
+    }
+}
 
 // - 事件处理
 /** 程序进入后台的通知的事件监听 */

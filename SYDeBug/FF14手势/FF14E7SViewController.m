@@ -26,6 +26,7 @@
 @property (nonatomic, assign)NSInteger buttonTag;
 
 
+
 @end
 
 @implementation FF14E7SViewController
@@ -35,6 +36,9 @@
     
     return YES;
 }
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -372,8 +376,8 @@
 
 - (void)wButton:(UIButton *)sender{
     
-    
 }
+
 
 - (void)sButton:(UIButton *)sender{
     
