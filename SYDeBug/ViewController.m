@@ -126,8 +126,8 @@ static NSString *identifier = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0) {
-        //XibViewController
-        [self pushToViewControllerWithName:@"SYiCarouselViewController" param:nil];
+        //XibViewController //SYiCarouselViewController //FF14E7SViewController //CollectionViewController
+        [self pushToViewControllerWithName:@"CollectionViewController" param:nil];
         
     }else if (indexPath.row == 1){
         
