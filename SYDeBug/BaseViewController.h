@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)sy_preferredNavigationBarHidden;
 
 /// 屏幕横屏
-- (void)screen;
+- (void)sy_screenFlip;
 
 @end
 

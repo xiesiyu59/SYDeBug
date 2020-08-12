@@ -224,7 +224,7 @@ static NSString *identifier = @"cell";
 - (void)buttonClick:(UIButton *)sender{
     
     NSLog(@"点击");
-    [self screen];
+    [self sy_screenFlip];
 }
 
 @end

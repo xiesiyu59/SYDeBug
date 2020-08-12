@@ -109,7 +109,7 @@
 }
 
 //横竖屏切换按钮方法
--(void)screen{
+-(void)sy_screenFlip{
     //记着#import "AppDelegate.h"
     AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (self.fullScreen) {//横屏情况下，点击此按钮变为竖屏
