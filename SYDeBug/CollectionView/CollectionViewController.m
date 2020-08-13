@@ -34,14 +34,14 @@
 
 #pragma mark - <初始化数据源>
 - (void)initWithinitializationDataSource {
-    self.imageArray= @[@"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/fb6628722edd42a4f9a01fe0bce51718.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/38526e0920189c5e4ac5323f77ffd09c.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/e44651f4142b13d6ebe53d73ee723228.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/c7e0c77a8f66366a8c6a3345f62d154a.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/d93ede141c68f12327a894f749eb05b6.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200602\/cc1d1a538165520eb5321f6d8a383918.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200513\/4bf1233acb278be65a1f1cbbc855cbd7.jpg",
-                       @"http:\/\/cdn.gaosainet.com\/uploads\/img\/20200514\/4e4383a55cd9ae89efd0640f6d7dba08.jpg",
+    self.imageArray= @[@"http://cdn.gaosainet.com/uploads/img/20200602/fb6628722edd42a4f9a01fe0bce51718.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200602/38526e0920189c5e4ac5323f77ffd09c.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200602/e44651f4142b13d6ebe53d73ee723228.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200602/c7e0c77a8f66366a8c6a3345f62d154a.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200602/d93ede141c68f12327a894f749eb05b6.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200602/cc1d1a538165520eb5321f6d8a383918.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200513/4bf1233acb278be65a1f1cbbc855cbd7.jpg",
+                       @"http://cdn.gaosainet.com/uploads/img/20200514/4e4383a55cd9ae89efd0640f6d7dba08.jpg",
                        @"http://www.17qq.com/img_biaoqing/68341470.jpeg",
     ];
     
@@ -79,6 +79,8 @@
     cell.backgroundColor = [UIColor lightGrayColor];
     
     UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
     [imageView sd_setImageWithURL:UrlWithString(self.imageArray[indexPath.row])];
     [cell.contentView addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,6 +118,8 @@
     
     UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
     [imageView sd_setImageWithURL:UrlWithString(self.imageArray[indexPath.row])];
     [cell.contentView addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
