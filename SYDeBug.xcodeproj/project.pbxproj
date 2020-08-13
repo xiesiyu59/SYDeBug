@@ -36,6 +36,8 @@
 		BA170333247E50C2006620F2 /* AdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA170332247E50C2006620F2 /* AdModel.m */; };
 		BA170336247E51A7006620F2 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA170335247E51A7006620F2 /* MainModel.m */; };
 		BA170339247E524D006620F2 /* SpecialModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA170338247E524D006620F2 /* SpecialModel.m */; };
+		BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EE7A24E3C77B00FC85BD /* SYGuideMaskViewController.m */; };
+		BA47EE7F24E3C79D00FC85BD /* SYGuideMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EE7E24E3C79D00FC85BD /* SYGuideMaskView.m */; };
 		BA58B6B6247F4C9F00885A7E /* LabelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58B6B5247F4C9F00885A7E /* LabelViewModel.m */; };
 		BA73A1EB23F235AE00701456 /* HomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73A1EA23F235AE00701456 /* HomeVc.m */; };
 		BA73FB92237BDAF30082FE9B /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73FB91237BDAF30082FE9B /* FMDBManager.m */; };
@@ -191,6 +193,10 @@
 		BA170335247E51A7006620F2 /* MainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		BA170337247E524D006620F2 /* SpecialModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialModel.h; sourceTree = "<group>"; };
 		BA170338247E524D006620F2 /* SpecialModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialModel.m; sourceTree = "<group>"; };
+		BA47EE7924E3C77B00FC85BD /* SYGuideMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGuideMaskViewController.h; sourceTree = "<group>"; };
+		BA47EE7A24E3C77B00FC85BD /* SYGuideMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGuideMaskViewController.m; sourceTree = "<group>"; };
+		BA47EE7D24E3C79D00FC85BD /* SYGuideMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYGuideMaskView.h; sourceTree = "<group>"; };
+		BA47EE7E24E3C79D00FC85BD /* SYGuideMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGuideMaskView.m; sourceTree = "<group>"; };
 		BA58B6B4247F4C9F00885A7E /* LabelViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelViewModel.h; sourceTree = "<group>"; };
 		BA58B6B5247F4C9F00885A7E /* LabelViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelViewModel.m; sourceTree = "<group>"; };
 		BA73A1E923F235AE00701456 /* HomeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVc.h; sourceTree = "<group>"; };
@@ -508,6 +514,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BA47EE7824E3C76800FC85BD /* SYGuideMaskVc */ = {
+			isa = PBXGroup;
+			children = (
+				BA47EE7C24E3C79200FC85BD /* SYGuideMaskView */,
+				BA47EE7924E3C77B00FC85BD /* SYGuideMaskViewController.h */,
+				BA47EE7A24E3C77B00FC85BD /* SYGuideMaskViewController.m */,
+			);
+			path = SYGuideMaskVc;
+			sourceTree = "<group>";
+		};
+		BA47EE7C24E3C79200FC85BD /* SYGuideMaskView */ = {
+			isa = PBXGroup;
+			children = (
+				BA47EE7D24E3C79D00FC85BD /* SYGuideMaskView.h */,
+				BA47EE7E24E3C79D00FC85BD /* SYGuideMaskView.m */,
+			);
+			path = SYGuideMaskView;
+			sourceTree = "<group>";
+		};
 		BA4D901524DA3FDF004D9B86 /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +773,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BA47EE7824E3C76800FC85BD /* SYGuideMaskVc */,
 				BA92337B24E22C7E00F33255 /* CollectionView */,
 				BA4D901524DA3FDF004D9B86 /* iCarousel */,
 				BA7FEC1D24CFB9E4008BBD02 /* FF14手势 */,
@@ -1205,6 +1231,7 @@
 				BAA5B96923794E2700BDBE52 /* GoodsDetailCell.m in Sources */,
 				BA0D5AC1248785B100DD9D99 /* UITableViewCell+WebVideoCache.m in Sources */,
 				BA0D5ACE248785CB00DD9D99 /* PTSSYHomeHotMainController.m in Sources */,
+				BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */,
 				BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */,
 				BAFD2A1B248F6CBA00D91EE2 /* FileDownloadVc.m in Sources */,
 				BA0D5AB6248785B100DD9D99 /* JPVideoPlayerControlViews.m in Sources */,
@@ -1264,6 +1291,7 @@
 				BAA3FF85237AA8FA00E122BE /* NSArray+ ZXPUnicode.m in Sources */,
 				BA0D5AB2248785B100DD9D99 /* JPVideoPlayerCompat.m in Sources */,
 				BAEACB1D249B3D070081CD22 /* UIImage+Masking.m in Sources */,
+				BA47EE7F24E3C79D00FC85BD /* SYGuideMaskView.m in Sources */,
 				BAF12F9A24BD4A3800DAE099 /* NSString+XSYTimeDHMS.m in Sources */,
 				BA170336247E51A7006620F2 /* MainModel.m in Sources */,
 				BA0D5ABA248785B100DD9D99 /* JPVideoPlayerCellProtocol.m in Sources */,

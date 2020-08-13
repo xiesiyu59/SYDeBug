@@ -19,6 +19,7 @@
 #import <SDWebImageManager.h>
 #import "UIViewController+Category.h"
 #import <MJRefresh.h>
+#import "BaseClassTool.h"
 
 
 #ifdef DEBUG
