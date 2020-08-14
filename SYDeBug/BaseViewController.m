@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import <FDFullscreenPopGesture-umbrella.h>
+#import <UINavigationController+FDFullscreenPopGesture.h>
 #import "AppDelegate.h"
 
 
