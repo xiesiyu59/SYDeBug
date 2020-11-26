@@ -87,9 +87,11 @@
     [countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     countButton.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:countButton];
-    if ([LocalDataTool readDataDefaultsWithForKey:gcdButton] != nil) {
+    NSString *locaTime = [LocalDataTool readDataDefaultsWithForKey:gcdButton];
+    if ([locaTime integerValue] != 0) {
         [self openCountDown:countButton];
     }
+    
     [countButton addTarget:self action:@selector(openCountDown:) forControlEvents:UIControlEventTouchUpInside];
     [countButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(leftButton.mas_bottom).offset(10);
@@ -272,10 +274,12 @@
 
 -(void)openCountDown:(UIButton *)sender{
     
+    
     __block NSInteger time = 0;
     NSString *locaTime = [LocalDataTool readDataDefaultsWithForKey:gcdButton];
-    if (!locaTime) {
-         time = 59; //倒计时时间
+    
+    if ([locaTime integerValue] == 0) {
+        time = 59; //倒计时时间
         [LocalDataTool writeDataDefaultsValue:@(time) withForKey:gcdButton];
     }else{
         time = [locaTime integerValue];
