@@ -44,7 +44,6 @@
 		BA73FB96237BEB4B0082FE9B /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73FB94237BEB4B0082FE9B /* StudentCell.m */; };
 		BA73FB97237BEB4B0082FE9B /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA73FB95237BEB4B0082FE9B /* StudentCell.xib */; };
 		BA7E7818249CB39D0053129E /* SYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7E7817249CB39D0053129E /* SYProgressHUD.m */; };
-		BA7FEC2024CFBA10008BBD02 /* FF14E7SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7FEC1F24CFBA10008BBD02 /* FF14E7SViewController.m */; };
 		BA8183142499ECD00024CF40 /* KeyChainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8183132499ECD00024CF40 /* KeyChainTool.m */; };
 		BA818317249A131A0024CF40 /* CalendarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA818316249A131A0024CF40 /* CalendarDetailViewController.m */; };
 		BA92337E24E22CA100F33255 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92337D24E22CA100F33255 /* CollectionViewController.m */; };
@@ -131,6 +130,7 @@
 		BAFD2A17248F696500D91EE2 /* SYDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD2A16248F696500D91EE2 /* SYDownLoader.m */; };
 		BAFD2A1B248F6CBA00D91EE2 /* FileDownloadVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD2A1A248F6CBA00D91EE2 /* FileDownloadVc.m */; };
 		BAFD2A1E248F6E5000D91EE2 /* FileDownloadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFD2A1D248F6E5000D91EE2 /* FileDownloadCell.m */; };
+		BAFDE882256FA6E300275D15 /* LocationNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE881256FA6E300275D15 /* LocationNoticeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,8 +208,6 @@
 		BA73FB95237BEB4B0082FE9B /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 		BA7E7816249CB39D0053129E /* SYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYProgressHUD.h; sourceTree = "<group>"; };
 		BA7E7817249CB39D0053129E /* SYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYProgressHUD.m; sourceTree = "<group>"; };
-		BA7FEC1E24CFBA10008BBD02 /* FF14E7SViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FF14E7SViewController.h; sourceTree = "<group>"; };
-		BA7FEC1F24CFBA10008BBD02 /* FF14E7SViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FF14E7SViewController.m; sourceTree = "<group>"; };
 		BA8183122499ECD00024CF40 /* KeyChainTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainTool.h; sourceTree = "<group>"; };
 		BA8183132499ECD00024CF40 /* KeyChainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainTool.m; sourceTree = "<group>"; };
 		BA818315249A131A0024CF40 /* CalendarDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarDetailViewController.h; sourceTree = "<group>"; };
@@ -377,6 +375,8 @@
 		BAFD2A1A248F6CBA00D91EE2 /* FileDownloadVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloadVc.m; sourceTree = "<group>"; };
 		BAFD2A1C248F6E5000D91EE2 /* FileDownloadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloadCell.h; sourceTree = "<group>"; };
 		BAFD2A1D248F6E5000D91EE2 /* FileDownloadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloadCell.m; sourceTree = "<group>"; };
+		BAFDE880256FA6E300275D15 /* LocationNoticeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationNoticeViewController.h; sourceTree = "<group>"; };
+		BAFDE881256FA6E300275D15 /* LocationNoticeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationNoticeViewController.m; sourceTree = "<group>"; };
 		F45A220260AFA4CD3E4DB0CF /* Pods-SYDeBug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYDeBug.debug.xcconfig"; path = "Target Support Files/Pods-SYDeBug/Pods-SYDeBug.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -573,15 +573,6 @@
 			path = SYProgressHUD;
 			sourceTree = "<group>";
 		};
-		BA7FEC1D24CFB9E4008BBD02 /* FF14手势 */ = {
-			isa = PBXGroup;
-			children = (
-				BA7FEC1E24CFBA10008BBD02 /* FF14E7SViewController.h */,
-				BA7FEC1F24CFBA10008BBD02 /* FF14E7SViewController.m */,
-			);
-			path = "FF14手势";
-			sourceTree = "<group>";
-		};
 		BA8183112499ECD00024CF40 /* KeyChainTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,10 +764,10 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BAFDE87F256FA6BA00275D15 /* LocationNotice */,
 				BA47EE7824E3C76800FC85BD /* SYGuideMaskVc */,
 				BA92337B24E22C7E00F33255 /* CollectionView */,
 				BA4D901524DA3FDF004D9B86 /* iCarousel */,
-				BA7FEC1D24CFB9E4008BBD02 /* FF14手势 */,
 				BAEACAEF249B38710081CD22 /* XCPhotoBrowser */,
 				BAD714F52490ABA8008705C6 /* 日历 */,
 				BAD714F124908040008705C6 /* NSDateExtensions */,
@@ -1053,6 +1044,15 @@
 			path = FileDownloadVc;
 			sourceTree = "<group>";
 		};
+		BAFDE87F256FA6BA00275D15 /* LocationNotice */ = {
+			isa = PBXGroup;
+			children = (
+				BAFDE880256FA6E300275D15 /* LocationNoticeViewController.h */,
+				BAFDE881256FA6E300275D15 /* LocationNoticeViewController.m */,
+			);
+			path = LocationNotice;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1207,6 +1207,7 @@
 				BA0D5AB0248785B100DD9D99 /* JPVideoPlayerCache.m in Sources */,
 				BAA3FF77237AA10200E122BE /* FMDBVc.m in Sources */,
 				BA92337E24E22CA100F33255 /* CollectionViewController.m in Sources */,
+				BAFDE882256FA6E300275D15 /* LocationNoticeViewController.m in Sources */,
 				BAC3C8802368204D0002AF82 /* BaseViewController.m in Sources */,
 				BAF12F9B24BD4A3800DAE099 /* DateToTimeAgo.m in Sources */,
 				BA0D5ABD248785B100DD9D99 /* JPGCDExtensions.m in Sources */,
@@ -1281,7 +1282,6 @@
 				BAC3C86F23680F330002AF82 /* main.m in Sources */,
 				BAFC849B24777245000C525F /* SwitchViewsController.m in Sources */,
 				BAC3C86123680F310002AF82 /* AppDelegate.m in Sources */,
-				BA7FEC2024CFBA10008BBD02 /* FF14E7SViewController.m in Sources */,
 				BAEACB23249B3D070081CD22 /* UIImage+Reflection.m in Sources */,
 				BAFA4A0F24C16CEB00F8B0F1 /* UIView+SYView.m in Sources */,
 				BA0D5AB5248785B100DD9D99 /* JPVideoPlayerCacheFile.m in Sources */,

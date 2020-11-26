@@ -11,9 +11,9 @@
 #import "ViewController.h"
 #import <Aspects.h>
 #import "YYCacheViewController.h"
-#import "FF14E7SViewController.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 @end
 
@@ -32,7 +32,14 @@
     //网路检测配置
     [self reachabilityManagerConfig];
     
+    [self registerNotification];
+    
     return YES;
+}
+
+- (void)reachabilityManagerConfig{
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 
@@ -51,11 +58,49 @@
     
 }
 
-
-- (void)reachabilityManagerConfig{
+- (void)registerNotification {
     
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    UNAuthorizationOptions options = UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge;
+    UNUserNotificationCenter.currentNotificationCenter.delegate = self;
+    [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            // 允许授权
+        } else {
+            // 不允许授权
+        }
+    }];
+    
+    
+    // 获取用户对通知的设置
+    // 通过settings.authorizationStatus 来处理用户没有打开通知授权的情况
+    [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        NSLog(@"%@",settings);
+    }];
 }
+
+// 在前台时 收到通知
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        
+    }
+    NSLog(@"%@",userInfo);
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionBadge);
+}
+
+
+// 点击通知，从后台进入前台
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    NSString *identifier =  response.actionIdentifier;
+    if ([identifier isEqualToString:@"open"]) {
+        NSLog(@"打开操作");
+    } else if ([identifier isEqualToString:@"close"]) {
+        NSLog(@"关闭操作");
+    }
+    completionHandler();
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -113,6 +158,7 @@
 //    程序已经变为Active（前台）时调用。对应applicationDidEnterBackground（已经进入后台）。
 //    1.若程序之前在后台，在此方法内刷新用户界面。
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 
