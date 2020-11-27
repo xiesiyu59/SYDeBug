@@ -39,6 +39,9 @@
 		BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EE7A24E3C77B00FC85BD /* SYGuideMaskViewController.m */; };
 		BA47EE7F24E3C79D00FC85BD /* SYGuideMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47EE7E24E3C79D00FC85BD /* SYGuideMaskView.m */; };
 		BA58B6B6247F4C9F00885A7E /* LabelViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58B6B5247F4C9F00885A7E /* LabelViewModel.m */; };
+		BA58BC902570ED1600D29377 /* SystemPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58BC8F2570ED1600D29377 /* SystemPhotoViewController.m */; };
+		BA58BC962570F3F100D29377 /* GridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58BC952570F3F100D29377 /* GridViewCell.m */; };
+		BA58BC9A2570F62B00D29377 /* SystemPhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA58BC992570F62B00D29377 /* SystemPhotoDetailViewController.m */; };
 		BA73A1EB23F235AE00701456 /* HomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73A1EA23F235AE00701456 /* HomeVc.m */; };
 		BA73FB92237BDAF30082FE9B /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73FB91237BDAF30082FE9B /* FMDBManager.m */; };
 		BA73FB96237BEB4B0082FE9B /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA73FB94237BEB4B0082FE9B /* StudentCell.m */; };
@@ -199,6 +202,12 @@
 		BA47EE7E24E3C79D00FC85BD /* SYGuideMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYGuideMaskView.m; sourceTree = "<group>"; };
 		BA58B6B4247F4C9F00885A7E /* LabelViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelViewModel.h; sourceTree = "<group>"; };
 		BA58B6B5247F4C9F00885A7E /* LabelViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelViewModel.m; sourceTree = "<group>"; };
+		BA58BC8E2570ED1600D29377 /* SystemPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemPhotoViewController.h; sourceTree = "<group>"; };
+		BA58BC8F2570ED1600D29377 /* SystemPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemPhotoViewController.m; sourceTree = "<group>"; };
+		BA58BC942570F3F100D29377 /* GridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewCell.h; sourceTree = "<group>"; };
+		BA58BC952570F3F100D29377 /* GridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewCell.m; sourceTree = "<group>"; };
+		BA58BC982570F62B00D29377 /* SystemPhotoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemPhotoDetailViewController.h; sourceTree = "<group>"; };
+		BA58BC992570F62B00D29377 /* SystemPhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemPhotoDetailViewController.m; sourceTree = "<group>"; };
 		BA73A1E923F235AE00701456 /* HomeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVc.h; sourceTree = "<group>"; };
 		BA73A1EA23F235AE00701456 /* HomeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVc.m; sourceTree = "<group>"; };
 		BA73FB90237BDAF30082FE9B /* FMDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
@@ -551,6 +560,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BA58BC8C2570ED0100D29377 /* SystemPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BA58BC8E2570ED1600D29377 /* SystemPhotoViewController.h */,
+				BA58BC8F2570ED1600D29377 /* SystemPhotoViewController.m */,
+				BA58BC982570F62B00D29377 /* SystemPhotoDetailViewController.h */,
+				BA58BC992570F62B00D29377 /* SystemPhotoDetailViewController.m */,
+				BA58BC942570F3F100D29377 /* GridViewCell.h */,
+				BA58BC952570F3F100D29377 /* GridViewCell.m */,
+			);
+			path = SystemPhoto;
+			sourceTree = "<group>";
+		};
 		BA73A1E823F2352E00701456 /* 首页下拉刷新 */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +786,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BA58BC8C2570ED0100D29377 /* SystemPhoto */,
 				BAFDE87F256FA6BA00275D15 /* LocationNotice */,
 				BA47EE7824E3C76800FC85BD /* SYGuideMaskVc */,
 				BA92337B24E22C7E00F33255 /* CollectionView */,
@@ -1234,6 +1257,7 @@
 				BA0D5ACE248785CB00DD9D99 /* PTSSYHomeHotMainController.m in Sources */,
 				BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */,
 				BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */,
+				BA58BC962570F3F100D29377 /* GridViewCell.m in Sources */,
 				BAFD2A1B248F6CBA00D91EE2 /* FileDownloadVc.m in Sources */,
 				BA0D5AB6248785B100DD9D99 /* JPVideoPlayerControlViews.m in Sources */,
 				BAFD2A17248F696500D91EE2 /* SYDownLoader.m in Sources */,
@@ -1246,6 +1270,7 @@
 				BAFC84A22477D508000C525F /* YYCacheViewController.m in Sources */,
 				BA0D5AB1248785B100DD9D99 /* UIView+WebVideoCache.m in Sources */,
 				BAFD29F3248F260E00D91EE2 /* HTTPSessionManager.m in Sources */,
+				BA58BC9A2570F62B00D29377 /* SystemPhotoDetailViewController.m in Sources */,
 				BAFD2A1E248F6E5000D91EE2 /* FileDownloadCell.m in Sources */,
 				BAC3C86423680F310002AF82 /* ViewController.m in Sources */,
 				BAEACB18249B3D070081CD22 /* NYXProgressiveImageView.m in Sources */,
@@ -1298,6 +1323,7 @@
 				BA7E7818249CB39D0053129E /* SYProgressHUD.m in Sources */,
 				BAA3FF7B237AA22E00E122BE /* UIWindow+DebugWindow.m in Sources */,
 				BAFD042F24DB99E600788CF9 /* SYiCarouselViewController.m in Sources */,
+				BA58BC902570ED1600D29377 /* SystemPhotoViewController.m in Sources */,
 				BA58B6B6247F4C9F00885A7E /* LabelViewModel.m in Sources */,
 				BAA5B96323794D5200BDBE52 /* GoodsDetailLayout.m in Sources */,
 				BA0D5AC0248785B100DD9D99 /* JPVideoPlayerSupportUtils.m in Sources */,
