@@ -36,11 +36,6 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"箭头返回_黑"] style:UIBarButtonItemStylePlain target:self action:@selector(controllerViewBack)];
     self.navigationItem.leftBarButtonItem = item;
     
-    if (@available(iOS 11.0, *)) {
-        
-    }else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
     self.fd_prefersNavigationBarHidden = [self sy_preferredNavigationBarHidden];
     self.fd_interactivePopDisabled = [self sy_interactivePopDisabled];

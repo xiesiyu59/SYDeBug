@@ -47,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"相册照片";
     //每次访问相册都会调用这个handler  检查改app的授权情况
     //PHPhotoLibrary
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
