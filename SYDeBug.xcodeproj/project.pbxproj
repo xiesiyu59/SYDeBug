@@ -96,6 +96,7 @@
 		BAD714F424908064008705C6 /* NSDate+SYExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD714F324908064008705C6 /* NSDate+SYExtensions.m */; };
 		BAD714F82490ABBF008705C6 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD714F72490ABBF008705C6 /* CalendarViewController.m */; };
 		BADCA4AC24935D6B00026276 /* UIButton+SYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCA4AB24935D6B00026276 /* UIButton+SYCountDown.m */; };
+		BAE3948325A8398F00E1472A /* SYIndexesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE3948225A8398F00E1472A /* SYIndexesViewController.m */; };
 		BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEACAF1249B387B0081CD22 /* XCPhotoBrowser.m */; };
 		BAEACB18249B3D070081CD22 /* NYXProgressiveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEACAFB249B3D060081CD22 /* NYXProgressiveImageView.m */; };
 		BAEACB19249B3D070081CD22 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BAEACAFD249B3D060081CD22 /* readme.md */; };
@@ -311,6 +312,8 @@
 		BAD714F72490ABBF008705C6 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BADCA4AA24935D6B00026276 /* UIButton+SYCountDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SYCountDown.h"; sourceTree = "<group>"; };
 		BADCA4AB24935D6B00026276 /* UIButton+SYCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SYCountDown.m"; sourceTree = "<group>"; };
+		BAE3948125A8398F00E1472A /* SYIndexesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYIndexesViewController.h; sourceTree = "<group>"; };
+		BAE3948225A8398F00E1472A /* SYIndexesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYIndexesViewController.m; sourceTree = "<group>"; };
 		BAEACAF0249B387B0081CD22 /* XCPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCPhotoBrowser.h; sourceTree = "<group>"; };
 		BAEACAF1249B387B0081CD22 /* XCPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPhotoBrowser.m; sourceTree = "<group>"; };
 		BAEACAFB249B3D060081CD22 /* NYXProgressiveImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXProgressiveImageView.m; sourceTree = "<group>"; };
@@ -786,6 +789,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BAE3948025A8395B00E1472A /* SYTableViewIndexes */,
 				BA58BC8C2570ED0100D29377 /* SystemPhoto */,
 				BAFDE87F256FA6BA00275D15 /* LocationNotice */,
 				BA47EE7824E3C76800FC85BD /* SYGuideMaskVc */,
@@ -871,6 +875,15 @@
 				BA818316249A131A0024CF40 /* CalendarDetailViewController.m */,
 			);
 			path = "日历";
+			sourceTree = "<group>";
+		};
+		BAE3948025A8395B00E1472A /* SYTableViewIndexes */ = {
+			isa = PBXGroup;
+			children = (
+				BAE3948125A8398F00E1472A /* SYIndexesViewController.h */,
+				BAE3948225A8398F00E1472A /* SYIndexesViewController.m */,
+			);
+			path = SYTableViewIndexes;
 			sourceTree = "<group>";
 		};
 		BAEACAEF249B38710081CD22 /* XCPhotoBrowser */ = {
@@ -1244,6 +1257,7 @@
 				BAEACB22249B3D070081CD22 /* UIScrollView+Screenshot.m in Sources */,
 				BA945EF6240FA181007E5F33 /* SYWkWebViewController.m in Sources */,
 				BA73FB96237BEB4B0082FE9B /* StudentCell.m in Sources */,
+				BAE3948325A8398F00E1472A /* SYIndexesViewController.m in Sources */,
 				BA9551DC247BBB0A001D561F /* PPCounterViewController.m in Sources */,
 				BAC3C883236820DC0002AF82 /* BaseNavigationController.m in Sources */,
 				BAFA4A0824C13CD300F8B0F1 /* SYRefreshFooter.m in Sources */,
