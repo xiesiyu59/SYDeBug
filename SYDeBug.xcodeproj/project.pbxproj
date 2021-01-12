@@ -49,6 +49,9 @@
 		BA7E7818249CB39D0053129E /* SYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7E7817249CB39D0053129E /* SYProgressHUD.m */; };
 		BA8183142499ECD00024CF40 /* KeyChainTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8183132499ECD00024CF40 /* KeyChainTool.m */; };
 		BA818317249A131A0024CF40 /* CalendarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA818316249A131A0024CF40 /* CalendarDetailViewController.m */; };
+		BA8735BE25AD364A00B8F4E4 /* SYImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735BD25AD364A00B8F4E4 /* SYImageViewController.m */; };
+		BA8735C925AD36B100B8F4E4 /* UIImage+SYQRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */; };
+		BA8735D225AD393900B8F4E4 /* UIImage+SYGradualImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */; };
 		BA92337E24E22CA100F33255 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92337D24E22CA100F33255 /* CollectionViewController.m */; };
 		BA92E1DD23710F400007CA11 /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA92E1DF23710F400007CA11 /* XibViewController.xib */; };
 		BA9360CA24DCF6850078EA52 /* SYDownloadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9360C924DCF6850078EA52 /* SYDownloadButton.m */; };
@@ -222,6 +225,12 @@
 		BA8183132499ECD00024CF40 /* KeyChainTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChainTool.m; sourceTree = "<group>"; };
 		BA818315249A131A0024CF40 /* CalendarDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarDetailViewController.h; sourceTree = "<group>"; };
 		BA818316249A131A0024CF40 /* CalendarDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailViewController.m; sourceTree = "<group>"; };
+		BA8735BC25AD364A00B8F4E4 /* SYImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYImageViewController.h; sourceTree = "<group>"; };
+		BA8735BD25AD364A00B8F4E4 /* SYImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYImageViewController.m; sourceTree = "<group>"; };
+		BA8735C725AD36B100B8F4E4 /* UIImage+SYQRImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYQRImage.h"; sourceTree = "<group>"; };
+		BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYQRImage.m"; sourceTree = "<group>"; };
+		BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYGradualImage.m"; sourceTree = "<group>"; };
+		BA8735D125AD393900B8F4E4 /* UIImage+SYGradualImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYGradualImage.h"; sourceTree = "<group>"; };
 		BA92337C24E22CA100F33255 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		BA92337D24E22CA100F33255 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		BA92E1DE23710F400007CA11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/XibViewController.xib; sourceTree = "<group>"; };
@@ -607,6 +616,35 @@
 			path = KeyChainTool;
 			sourceTree = "<group>";
 		};
+		BA8735BB25AD363400B8F4E4 /* SYImageView */ = {
+			isa = PBXGroup;
+			children = (
+				BA8735CF25AD392500B8F4E4 /* SYGradualImage */,
+				BA8735C025AD365C00B8F4E4 /* SYQRImage */,
+				BA8735BC25AD364A00B8F4E4 /* SYImageViewController.h */,
+				BA8735BD25AD364A00B8F4E4 /* SYImageViewController.m */,
+			);
+			path = SYImageView;
+			sourceTree = "<group>";
+		};
+		BA8735C025AD365C00B8F4E4 /* SYQRImage */ = {
+			isa = PBXGroup;
+			children = (
+				BA8735C725AD36B100B8F4E4 /* UIImage+SYQRImage.h */,
+				BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */,
+			);
+			path = SYQRImage;
+			sourceTree = "<group>";
+		};
+		BA8735CF25AD392500B8F4E4 /* SYGradualImage */ = {
+			isa = PBXGroup;
+			children = (
+				BA8735D125AD393900B8F4E4 /* UIImage+SYGradualImage.h */,
+				BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */,
+			);
+			path = SYGradualImage;
+			sourceTree = "<group>";
+		};
 		BA92337B24E22C7E00F33255 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,6 +827,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BA8735BB25AD363400B8F4E4 /* SYImageView */,
 				BAE3948025A8395B00E1472A /* SYTableViewIndexes */,
 				BA58BC8C2570ED0100D29377 /* SystemPhoto */,
 				BAFDE87F256FA6BA00275D15 /* LocationNotice */,
@@ -1250,11 +1289,13 @@
 				BA17032D247E4CFD006620F2 /* LabelView.m in Sources */,
 				BAFA4A0C24C16C5700F8B0F1 /* BaseClassTool.m in Sources */,
 				BACF6531247D022C00851E8B /* ARCViewController.m in Sources */,
+				BA8735BE25AD364A00B8F4E4 /* SYImageViewController.m in Sources */,
 				BAFA4A1224C16EDD00F8B0F1 /* SYPromptOptionView.m in Sources */,
 				BA0D5AB8248785B100DD9D99 /* UITableView+WebVideoCache.m in Sources */,
 				BA0D5AB4248785B100DD9D99 /* JPVideoPlayerScrollViewProtocol.m in Sources */,
 				BAA3FF88237AAF3D00E122BE /* InfoModel.m in Sources */,
 				BAEACB22249B3D070081CD22 /* UIScrollView+Screenshot.m in Sources */,
+				BA8735D225AD393900B8F4E4 /* UIImage+SYGradualImage.m in Sources */,
 				BA945EF6240FA181007E5F33 /* SYWkWebViewController.m in Sources */,
 				BA73FB96237BEB4B0082FE9B /* StudentCell.m in Sources */,
 				BAE3948325A8398F00E1472A /* SYIndexesViewController.m in Sources */,
@@ -1294,6 +1335,7 @@
 				BA0D5ABE248785B100DD9D99 /* JPVideoPlayer.m in Sources */,
 				BAF12F9924BD4A3800DAE099 /* StrConversion.m in Sources */,
 				BAEE667323878D2000BA1FB0 /* AmountCalculationVc.m in Sources */,
+				BA8735C925AD36B100B8F4E4 /* UIImage+SYQRImage.m in Sources */,
 				BA9D330124A04BCB00DC545D /* UIViewController+Category.m in Sources */,
 				BAFD29F9248F2BE600D91EE2 /* NSString+XCJson.m in Sources */,
 				BAA5B95C23794C6500BDBE52 /* GoodsDetailViewController.m in Sources */,
