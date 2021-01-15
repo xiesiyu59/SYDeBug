@@ -16,7 +16,7 @@ typedef void (^touchedDownBlock)(SYCountDownButton *countDownButton,NSInteger ta
 typedef void (^didChangeBlock)(SYCountDownButton *countDownButton,NSInteger second);
 typedef void (^didFinishedBlock)(SYCountDownButton *countDownButton);
 
-
+/// 倒计时按钮,本地化轻量保存计时。如有需要退出界面删除，在viewDidDisappear:(BOOL)animated 调用stop方法
 @interface SYCountDownButton : UIButton {
     
     NSInteger _second;
@@ -25,20 +25,17 @@ typedef void (^didFinishedBlock)(SYCountDownButton *countDownButton);
     touchedDownBlock _touchedDownBlock;
     didChangeBlock _didChangeBlock;
     didFinishedBlock _didFinishedBlock;
-    
 }
 
 @property (nonatomic, strong)NSString *cacheName;   //保存倒计时
 
-- (void)addToucheHandler:(touchedDownBlock)touchHandler;
+///开始倒计时
 - (void)startWithSecond:(NSInteger)second;
-
+- (void)addToucheHandler:(touchedDownBlock)touchHandler;
 - (void)didChange:(didChangeBlock)didChangeBlock;
 - (void)didFinished:(didFinishedBlock)didFinishedBlock;
-
+///停止倒计时，移除本地保存计时时间
 - (void)stop;
-
-- (id)readDataDefaultsWithForKey:(NSString *)key;
 
 @end
 

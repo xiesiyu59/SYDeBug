@@ -42,7 +42,7 @@
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
-    [self.countButton stop];
+//    [self.countButton stop];
    
 }
 
@@ -103,20 +103,14 @@
         [countDownButton startWithSecond:59];
     }];
     [self.countButton didChange:^(SYCountDownButton * _Nonnull countDownButton, NSInteger second) {
-        
         [countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)second] forState:UIControlStateNormal];
         [countDownButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }];
     [self.countButton didFinished:^(SYCountDownButton * _Nonnull countDownButton) {
-        
         [countDownButton setTitle:@"重新发送" forState:UIControlStateNormal];
         [countDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }];
     [self.view addSubview:self.countButton];
-    NSString *countTime = [self.countButton readDataDefaultsWithForKey:self.countButton.cacheName];
-    if ([countTime integerValue] != 0) {
-        [self.countButton startWithSecond:[countTime integerValue]];
-    }
     [self.countButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(leftButton.mas_bottom).offset(10);
         make.left.equalTo(leftButton.mas_left);

@@ -25,6 +25,11 @@
 //倒计时按钮名称
 - (void)setCacheName:(NSString *)cacheName{
     _cacheName = cacheName;
+    //如果存在当前倒计时，则从保留倒计时开始倒计时
+    NSString *countTime = [self readDataDefaultsWithForKey:cacheName];
+    if ([countTime integerValue] != 0) {
+        [self startWithSecond:[countTime integerValue]];
+    }
 }
 
 #pragma -mark count down method
