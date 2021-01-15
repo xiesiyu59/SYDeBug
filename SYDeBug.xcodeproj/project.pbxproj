@@ -52,6 +52,7 @@
 		BA8735BE25AD364A00B8F4E4 /* SYImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735BD25AD364A00B8F4E4 /* SYImageViewController.m */; };
 		BA8735C925AD36B100B8F4E4 /* UIImage+SYQRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */; };
 		BA8735D225AD393900B8F4E4 /* UIImage+SYGradualImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */; };
+		BA8782BF25B12CA90003AFB5 /* SYCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8782BE25B12CA90003AFB5 /* SYCountDownButton.m */; };
 		BA92337E24E22CA100F33255 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92337D24E22CA100F33255 /* CollectionViewController.m */; };
 		BA92E1DD23710F400007CA11 /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA92E1DF23710F400007CA11 /* XibViewController.xib */; };
 		BA9360CA24DCF6850078EA52 /* SYDownloadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9360C924DCF6850078EA52 /* SYDownloadButton.m */; };
@@ -231,6 +232,8 @@
 		BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYQRImage.m"; sourceTree = "<group>"; };
 		BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SYGradualImage.m"; sourceTree = "<group>"; };
 		BA8735D125AD393900B8F4E4 /* UIImage+SYGradualImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYGradualImage.h"; sourceTree = "<group>"; };
+		BA8782BD25B12CA90003AFB5 /* SYCountDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYCountDownButton.h; sourceTree = "<group>"; };
+		BA8782BE25B12CA90003AFB5 /* SYCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYCountDownButton.m; sourceTree = "<group>"; };
 		BA92337C24E22CA100F33255 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		BA92337D24E22CA100F33255 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		BA92E1DE23710F400007CA11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/XibViewController.xib; sourceTree = "<group>"; };
@@ -643,6 +646,15 @@
 				BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */,
 			);
 			path = SYGradualImage;
+			sourceTree = "<group>";
+		};
+		BA8782BC25B12C8B0003AFB5 /* SYCountDownButton */ = {
+			isa = PBXGroup;
+			children = (
+				BA8782BD25B12CA90003AFB5 /* SYCountDownButton.h */,
+				BA8782BE25B12CA90003AFB5 /* SYCountDownButton.m */,
+			);
+			path = SYCountDownButton;
 			sourceTree = "<group>";
 		};
 		BA92337B24E22C7E00F33255 /* CollectionView */ = {
@@ -1060,6 +1072,7 @@
 		BAFC849F2477D4F4000C525F /* YYCache */ = {
 			isa = PBXGroup;
 			children = (
+				BA8782BC25B12C8B0003AFB5 /* SYCountDownButton */,
 				BAFA4A1324C16EE700F8B0F1 /* SYPromptOptionView */,
 				BAFA4A0924C16C3100F8B0F1 /* SYView */,
 				BAF12F8F24BD4A3800DAE099 /* SYTimeDHMS */,
@@ -1383,6 +1396,7 @@
 				BA58B6B6247F4C9F00885A7E /* LabelViewModel.m in Sources */,
 				BAA5B96323794D5200BDBE52 /* GoodsDetailLayout.m in Sources */,
 				BA0D5AC0248785B100DD9D99 /* JPVideoPlayerSupportUtils.m in Sources */,
+				BA8782BF25B12CA90003AFB5 /* SYCountDownButton.m in Sources */,
 				BAEACB21249B3D070081CD22 /* UIImage+Rotating.m in Sources */,
 				BAA3FF83237AA8FA00E122BE /* NSDictionary+ZXPUnicode.m in Sources */,
 				BADCA4AC24935D6B00026276 /* UIButton+SYCountDown.m in Sources */,

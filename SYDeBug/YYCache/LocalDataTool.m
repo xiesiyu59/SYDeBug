@@ -1,8 +1,8 @@
 //
 //  LocalDataTool.m
-//  SYDeBug
+//  Footstone
 //
-//  Created by xiesiyu on 2020/5/22.
+//  Created by xiesiyu on 2020/8/17.
 //  Copyright © 2020 xiesiyu. All rights reserved.
 //
 
@@ -13,6 +13,13 @@
 
 //Plist
 #define SAVELOCATION_PLIST @"LocalData.plist"
+
+
+@interface LocalDataTool ()
+
+@property (nonatomic, strong)YYCache *cache;
+
+@end
 
 static LocalDataTool *instance = nil;
 
@@ -28,11 +35,41 @@ static LocalDataTool *instance = nil;
     return instance;
 }
 
-///本地地址
+///本地地址 NSDocumentDirectory
 + (NSString *)cacheDocumentName:(NSString *)name {
     
     NSString *cacheFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     return [cacheFolder stringByAppendingPathComponent:name];
+}
+
+///本地地址 NSLibraryDirectory
++ (NSString *)cacheLibarayName:(NSString *)name {
+    
+    NSString *cacheFolder = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject];
+    return [cacheFolder stringByAppendingPathComponent:name];
+}
+
+///本地地址 NSCachesDirectory
++ (NSString *)cacheCachesName:(NSString *)name {
+    
+    NSString *cacheFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    return [cacheFolder stringByAppendingPathComponent:name];
+}
+
+///本地地址 tmp目录
++ (NSString *)cacheTmpName:(NSString *)name {
+    
+    NSString *tmpPath = NSTemporaryDirectory();
+    NSString *path =  [tmpPath stringByAppendingPathComponent:name];
+    return  path;
+}
+
+//本地是否存在文件
++ (BOOL)isCacheFilePath:(NSString *)filePath{
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        return YES;
+    }
+    return NO;
 }
 
 ///plist根目录
@@ -114,14 +151,6 @@ static LocalDataTool *instance = nil;
     [defaults synchronize];
 }
 
-///NSUserDefaults Bool 写入
-+ (void)writeDataDefaultsBoolValue:(BOOL)value withForKey:(NSString *)key{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:value forKey:key];
-    [defaults synchronize];
-}
-
 ///NSUserDefaults 删除
 + (void)removeDataDefaultsWhiteForKey:(NSString *)key{
     
@@ -133,6 +162,22 @@ static LocalDataTool *instance = nil;
         NSString *appDomainStr = [[NSBundle mainBundle] bundleIdentifier];
         [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomainStr];
     }
+}
+
+
+///NSUserDefaults Bool 写入
++ (void)writeDataDefaultsBoolValue:(BOOL)value withForKey:(NSString *)key{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:value forKey:key];
+    [defaults synchronize];
+}
+
+///NSUserDefaults Bool 读取
++ (BOOL)readDataDefaultsBoolWithForKey:(NSString *)key{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults boolForKey:key];
 }
 
 

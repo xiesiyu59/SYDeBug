@@ -1,19 +1,30 @@
 //
 //  LocalDataTool.h
-//  SYDeBug
+//  Footstone
 //
-//  Created by xiesiyu on 2020/5/22.
+//  Created by xiesiyu on 2020/8/17.
 //  Copyright © 2020 xiesiyu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <YYCache.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LocalDataTool : NSObject
 
-+ (instancetype)manager;
-@property (nonatomic, strong)YYCache *cache;
+///本地地址 NSDocumentDirectory
++ (NSString *)cacheDocumentName:(NSString *)name;
+///本地地址 NSLibraryDirectory
++ (NSString *)cacheLibarayName:(NSString *)name;
+///本地地址 NSCachesDirectory
++ (NSString *)cacheCachesName:(NSString *)name;
+///本地地址 tmp目录
++ (NSString *)cacheTmpName:(NSString *)name;
+
+//本地是否存在文件
++ (BOOL)isCacheFilePath:(NSString *)filePath;
+
 
 ///plist根目录
 + (id)readDataPlistRoot;
@@ -36,11 +47,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)readDataDefaultsWithForKey:(NSString *)key;
 ///NSUserDefaults写入
 + (void)writeDataDefaultsValue:(id)value withForKey:(NSString *)key;
-///NSUserDefaults Bool 写入
-+ (void)writeDataDefaultsBoolValue:(BOOL)value withForKey:(NSString *)key;
 ///NSUserDefaults 删除
 + (void)removeDataDefaultsWhiteForKey:(NSString *)key;
 
+///NSUserDefaults Bool 写入
++ (void)writeDataDefaultsBoolValue:(BOOL)value withForKey:(NSString *)key;
+///NSUserDefaults Bool 读取
++ (BOOL)readDataDefaultsBoolWithForKey:(NSString *)key;
 
 @end
 

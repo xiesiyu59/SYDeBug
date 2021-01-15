@@ -19,6 +19,7 @@
 #import "NSString+XSYTimeDHMS.h"
 #import "UIView+SYView.h"
 #import "SYPromptOptionView.h"
+#import "SYCountDownButton.h"
 
 #define gcdButton @"gcdButton"
 
@@ -26,13 +27,21 @@
     
 }
 
-@property (nonatomic, strong)dispatch_source_t buttonTimer;
- 
-
 @end
 
 @implementation YYCacheViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+   
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,22 +91,35 @@
         make.width.mas_equalTo(kScreenWidth/3);
     }];
     
-    UIButton *countButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [countButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    SYCountDownButton *countButton = [SYCountDownButton buttonWithType:UIButtonTypeCustom];
     countButton.backgroundColor = [UIColor yellowColor];
+    [countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [countButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+    countButton.cacheName = @"countDownButton";
+    [countButton addToucheHandler:^(SYCountDownButton * _Nonnull countDownButton, NSInteger tag) {
+        [countDownButton startWithSecond:59];
+    }];
+    [countButton didChange:^(SYCountDownButton * _Nonnull countDownButton, NSInteger second) {
+        
+        [countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)second] forState:UIControlStateNormal];
+        [countDownButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    }];
+    [countButton didFinished:^(SYCountDownButton * _Nonnull countDownButton) {
+        
+        [countDownButton setTitle:@"重新发送" forState:UIControlStateNormal];
+        [countDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }];
     [self.view addSubview:countButton];
-    NSString *locaTime = [LocalDataTool readDataDefaultsWithForKey:gcdButton];
-    if ([locaTime integerValue] != 0) {
-        [self openCountDown:countButton];
+    NSString *countTime = [LocalDataTool readDataDefaultsWithForKey:countButton.cacheName];
+    if ([countTime integerValue] != 0) {
+        [countButton startWithSecond:[countTime integerValue]];
     }
-    
-    [countButton addTarget:self action:@selector(openCountDown:) forControlEvents:UIControlEventTouchUpInside];
     [countButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(leftButton.mas_bottom).offset(10);
         make.left.equalTo(leftButton.mas_left);
         make.width.mas_equalTo(kScreenWidth/3);
     }];
+    
     
     UIButton *toastButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [toastButton setTitle:@"提示框" forState:UIControlStateNormal];
@@ -174,7 +196,6 @@
         make.left.equalTo(toastButton.mas_left);
         make.width.mas_equalTo(kScreenWidth/3);
     }];
-    
     
     
     NSLog(@"%@",[self compareCurrentTime:@"2020-01-07 14:20:00"]);
@@ -269,54 +290,6 @@
         }cancelTitle:@"" cancelBlock:nil];
     }
     
-}
-
-
--(void)openCountDown:(UIButton *)sender{
-    
-    
-    __block NSInteger time = 0;
-    NSString *locaTime = [LocalDataTool readDataDefaultsWithForKey:gcdButton];
-    
-    if ([locaTime integerValue] == 0) {
-        time = 59; //倒计时时间
-        [LocalDataTool writeDataDefaultsValue:@(time) withForKey:gcdButton];
-    }else{
-        time = [locaTime integerValue];
-    }
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    self.buttonTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    dispatch_source_set_timer(self.buttonTimer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(self.buttonTimer, ^{
-        
-        if(time <= 0){ //倒计时结束，关闭
-            [LocalDataTool removeDataDefaultsWhiteForKey:gcdButton];
-            dispatch_source_cancel(self.buttonTimer);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                //设置按钮的样式
-                [sender setTitle:@"重新发送" forState:UIControlStateNormal];
-                [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-                sender.userInteractionEnabled = YES;
-            });
-            
-        }else{
-            
-            int seconds = time % 60;
-            [LocalDataTool writeDataDefaultsValue:@(seconds) withForKey:gcdButton];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                //设置按钮显示读秒效果
-                [sender setTitle:[NSString stringWithFormat:@"重新发送(%.2d)", seconds] forState:UIControlStateNormal];
-                [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-                sender.userInteractionEnabled = NO;
-            });
-            time--;
-        }
-    });
-    dispatch_resume(self.buttonTimer);
-
 }
 
 
