@@ -27,7 +27,7 @@
     
 }
 
-@property (nonatomic, assign) SYCountDownButton *countButton;
+@property (nonatomic, strong) SYCountDownButton *countButton;
 
 @end
 
@@ -94,31 +94,30 @@
         make.width.mas_equalTo(kScreenWidth/3);
     }];
     
-    SYCountDownButton *countButton = [SYCountDownButton buttonWithType:UIButtonTypeCustom];
-    countButton.backgroundColor = [UIColor yellowColor];
-    [countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [countButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    countButton.cacheName = @"countDownButton";
-    [countButton addToucheHandler:^(SYCountDownButton * _Nonnull countDownButton, NSInteger tag) {
+    self.countButton = [SYCountDownButton buttonWithType:UIButtonTypeCustom];
+    self.countButton.backgroundColor = [UIColor yellowColor];
+    [self.countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.countButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+    self.countButton.cacheName = @"countDownButton";
+    [self.countButton addToucheHandler:^(SYCountDownButton * _Nonnull countDownButton, NSInteger tag) {
         [countDownButton startWithSecond:59];
     }];
-    [countButton didChange:^(SYCountDownButton * _Nonnull countDownButton, NSInteger second) {
+    [self.countButton didChange:^(SYCountDownButton * _Nonnull countDownButton, NSInteger second) {
         
         [countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)second] forState:UIControlStateNormal];
         [countDownButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }];
-    [countButton didFinished:^(SYCountDownButton * _Nonnull countDownButton) {
+    [self.countButton didFinished:^(SYCountDownButton * _Nonnull countDownButton) {
         
         [countDownButton setTitle:@"重新发送" forState:UIControlStateNormal];
         [countDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }];
-    [self.view addSubview:countButton];
-    self.countButton = countButton;
-    NSString *countTime = [countButton readDataDefaultsWithForKey:countButton.cacheName];
+    [self.view addSubview:self.countButton];
+    NSString *countTime = [self.countButton readDataDefaultsWithForKey:self.countButton.cacheName];
     if ([countTime integerValue] != 0) {
-        [countButton startWithSecond:[countTime integerValue]];
+        [self.countButton startWithSecond:[countTime integerValue]];
     }
-    [countButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.countButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(leftButton.mas_bottom).offset(10);
         make.left.equalTo(leftButton.mas_left);
         make.width.mas_equalTo(kScreenWidth/3);
@@ -133,8 +132,8 @@
     [self.view addSubview:toastButton];
     [toastButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [toastButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(countButton.mas_top);
-        make.left.equalTo(countButton.mas_right);
+        make.top.equalTo(self.countButton.mas_top);
+        make.left.equalTo(self.countButton.mas_right);
         make.width.mas_equalTo(kScreenWidth/3);
     }];
     
@@ -179,8 +178,8 @@
     [self.view addSubview:jurisdictionButton];
     [jurisdictionButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [jurisdictionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(countButton.mas_bottom).offset(10);
-        make.left.equalTo(countButton);
+        make.top.equalTo(self.countButton.mas_bottom).offset(10);
+        make.left.equalTo(self.countButton);
         make.width.mas_equalTo(kScreenWidth/3);
     }];
     
