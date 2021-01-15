@@ -23,11 +23,7 @@
     }
 }
 
-<<<<<<< HEAD
 //倒计时按钮名称
-=======
-
->>>>>>> a829a890dfc91f7b2563bbc5673eafd57bcbc1e0
 - (void)setCacheName:(NSString *)cacheName{
     _cacheName = cacheName;
 }
@@ -73,10 +69,7 @@
                 if (self->_didChangeBlock){
                     self->_didChangeBlock(self,seconds);
                 }
-<<<<<<< HEAD
-=======
-                
->>>>>>> a829a890dfc91f7b2563bbc5673eafd57bcbc1e0
+
             });
             time--;
         }
