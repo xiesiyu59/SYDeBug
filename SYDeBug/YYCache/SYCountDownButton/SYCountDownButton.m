@@ -7,7 +7,6 @@
 //
 
 #import "SYCountDownButton.h"
-#import "LocalDataTool.h"
 
 @implementation SYCountDownButton
 
@@ -34,11 +33,11 @@
     _second = second;
     
     __block NSInteger time = 0;
-    NSString *locaTime = [LocalDataTool readDataDefaultsWithForKey:self.cacheName];
+    NSString *locaTime = [self readDataDefaultsWithForKey:self.cacheName];
     
     if ([locaTime integerValue] == 0) {
         time = second; //倒计时时间
-        [LocalDataTool writeDataDefaultsValue:@(time) withForKey:self.cacheName];
+        [self writeDataDefaultsValue:@(time) withForKey:self.cacheName];
     }else{
         time = [locaTime integerValue];
     }
@@ -50,7 +49,7 @@
         
         if(time <= 0){ //倒计时结束，关闭
             dispatch_source_cancel(self->_timer);
-            [LocalDataTool removeDataDefaultsWhiteForKey:self.cacheName];
+            [self removeDataDefaultsWhiteForKey:self.cacheName];
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 self.userInteractionEnabled = YES;
@@ -62,7 +61,7 @@
         }else{
             
             int seconds = time % 60;
-            [LocalDataTool writeDataDefaultsValue:@(seconds) withForKey:self.cacheName];
+            [self writeDataDefaultsValue:@(seconds) withForKey:self.cacheName];
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 self.userInteractionEnabled = NO;
@@ -81,7 +80,7 @@
     
     if (_timer) {
         dispatch_source_cancel(_timer);
-        [LocalDataTool removeDataDefaultsWhiteForKey:self.cacheName];
+        [self removeDataDefaultsWhiteForKey:self.cacheName];
     }
 }
 
@@ -92,6 +91,35 @@
 
 - (void)didFinished:(didFinishedBlock)didFinishedBlock{
     _didFinishedBlock = [didFinishedBlock copy];
+}
+
+///NSUserDefaults读取
+- (id)readDataDefaultsWithForKey:(NSString *)key{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString * defaultsString = [defaults objectForKey:key];
+    return defaultsString;
+}
+
+///NSUserDefaults写入
+- (void)writeDataDefaultsValue:(id)value withForKey:(NSString *)key{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:value forKey:key];
+    [defaults synchronize];
+}
+
+///NSUserDefaults 删除
+- (void)removeDataDefaultsWhiteForKey:(NSString *)key{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (key.length) {
+        [defaults removeObjectForKey:key];
+    }else{
+        //移除所有
+        NSString *appDomainStr = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomainStr];
+    }
 }
 
 @end

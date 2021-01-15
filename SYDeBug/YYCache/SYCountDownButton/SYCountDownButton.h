@@ -38,6 +38,8 @@ typedef void (^didFinishedBlock)(SYCountDownButton *countDownButton);
 
 - (void)stop;
 
+- (id)readDataDefaultsWithForKey:(NSString *)key;
+
 @end
 
 NS_ASSUME_NONNULL_END

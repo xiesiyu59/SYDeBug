@@ -27,6 +27,8 @@
     
 }
 
+@property (nonatomic, assign) SYCountDownButton *countButton;
+
 @end
 
 @implementation YYCacheViewController
@@ -40,6 +42,7 @@
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
+    [self.countButton stop];
    
 }
 
@@ -110,7 +113,8 @@
         [countDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }];
     [self.view addSubview:countButton];
-    NSString *countTime = [LocalDataTool readDataDefaultsWithForKey:countButton.cacheName];
+    self.countButton = countButton;
+    NSString *countTime = [countButton readDataDefaultsWithForKey:countButton.cacheName];
     if ([countTime integerValue] != 0) {
         [countButton startWithSecond:[countTime integerValue]];
     }
