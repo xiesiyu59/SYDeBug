@@ -127,7 +127,7 @@ static NSString *identifier = @"cell";
     
     if (indexPath.row == 0) {
         //XibViewController //SYiCarouselViewController //FF14E7SViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController
-        [self pushToViewControllerWithName:@"SYImageViewController" param:nil];
+        [self pushToViewControllerWithName:@"SYGuideMaskViewController" param:nil];
         
     }else if (indexPath.row == 1){
         
