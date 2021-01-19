@@ -99,16 +99,16 @@
     [self.countButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.countButton setTitle:@"获取验证码" forState:UIControlStateNormal];
     self.countButton.cacheName = @"countDownButton";
-    [self.countButton addToucheHandler:^(SYCountDownButton * _Nonnull countDownButton, NSInteger tag) {
-        [countDownButton startWithSecond:59];
+    [self.countButton addToucheHandler:^(SYCountDownButton * _Nonnull button, NSInteger tag) {
+        [button startWithSecond:59];
     }];
-    [self.countButton didChange:^(SYCountDownButton * _Nonnull countDownButton, NSInteger second) {
-        [countDownButton setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)second] forState:UIControlStateNormal];
-        [countDownButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.countButton didChange:^(SYCountDownButton * _Nonnull button, NSInteger second) {
+        [button setTitle:[NSString stringWithFormat:@"重新发送(%.2ld)", (long)second] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }];
-    [self.countButton didFinished:^(SYCountDownButton * _Nonnull countDownButton) {
-        [countDownButton setTitle:@"重新发送" forState:UIControlStateNormal];
-        [countDownButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.countButton didFinished:^(SYCountDownButton * _Nonnull button) {
+        [button setTitle:@"重新发送" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }];
     [self.view addSubview:self.countButton];
     [self.countButton mas_makeConstraints:^(MASConstraintMaker *make) {

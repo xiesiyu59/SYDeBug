@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class SYCountDownButton;
 
-typedef void (^touchedDownBlock)(SYCountDownButton *countDownButton,NSInteger tag);
-typedef void (^didChangeBlock)(SYCountDownButton *countDownButton,NSInteger second);
-typedef void (^didFinishedBlock)(SYCountDownButton *countDownButton);
+typedef void (^touchedDownBlock)(SYCountDownButton *button,NSInteger tag);
+typedef void (^didChangeBlock)(SYCountDownButton *button,NSInteger second);
+typedef void (^didFinishedBlock)(SYCountDownButton *button);
 
 /// 倒计时按钮,本地化轻量保存计时。如有需要退出界面删除，在viewDidDisappear:(BOOL)animated 调用stop方法
 @interface SYCountDownButton : UIButton {
