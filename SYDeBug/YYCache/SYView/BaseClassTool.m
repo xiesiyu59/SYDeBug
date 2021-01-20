@@ -10,19 +10,6 @@
 
 @implementation BaseClassTool
 
-+ (UIView *)backView {
-    UIView *backV = [[UIView alloc] init];
-    backV.backgroundColor = [UIColor whiteColor];
-//    backV.layer.borderWidth = kOnePx;;
-//    backV.layer.borderColor = [UIColor appLineColor].CGColor;
-    return backV;
-}
-
-+ (UIView *)lineView {
-    UIView *lineV = [[UIView alloc] init];
-    lineV.backgroundColor = [UIColor grayColor];
-    return lineV;
-}
 
 + (UILabel *)labelWithFont:(CGFloat)font
                  textColor:(UIColor *)textColor

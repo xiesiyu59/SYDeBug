@@ -23,11 +23,13 @@
 
 #define gcdButton @"gcdButton"
 
-@interface YYCacheViewController () <CLLocationManagerDelegate> {
+@interface YYCacheViewController () <CLLocationManagerDelegate,UITextFieldDelegate> {
     
 }
 
 @property (nonatomic, strong) SYCountDownButton *countButton;
+@property (nonatomic, strong) UITextField *textField;
+
 
 @end
 
@@ -199,9 +201,67 @@
     NSLog(@"%@",[NSString stringTimeConversionTimestamp:@"2020-07-14" dateformater:@"yyyy-MM-dd"]);
     NSLog(@"%@",[NSString timestampConversionStringTime:1594656000 dateformater:@"yyyy.MM.dd HH.mm.ss"]);
     
+    self.textField = [BaseClassTool textFieldWithFont:18 textColor:[UIColor blackColor] keyboardType:UIKeyboardTypeDefault returnKeyType:UIReturnKeyDone placeholder:@"输入" text:@""];
+    self.textField.delegate = self;
+    [self.textField setLXCornerdious:4];
+    [self.textField setLXBorderWidth:1.0f borderColor:[UIColor blackColor]];
+    [self.textField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.view addSubview:self.textField];
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(jurisdictionButton.mas_bottom).offset(10);
+        make.centerX.equalTo(self.view);
+        make.width.mas_equalTo(kScreenWidth-32);
+        make.height.mas_equalTo(40);
+    }];
     
 }
 
+
+#pragma mark - <UITextFieldDelegate>
+- (void)textFieldChange:(UITextField *)textField{
+    
+    NSLog(@"改变:%@",textField.text);
+    UITextRange *selectedRange = self.textField.markedTextRange;
+    UITextPosition *position = [self.textField positionFromPosition:selectedRange.start offset:0];
+      
+    if (!position) { // 没有高亮选择的字
+        //过滤非汉字字符
+        self.textField.text = [self filterCharactor:self.textField.text withRegex:@"[^\u4e00-\u9fa5]"];
+          
+        if (self.textField.text.length >= 8) {
+            self.textField.text = [self.textField.text substringToIndex:8];
+        }
+    }else { //有高亮文字
+        //do nothing
+    }
+    
+}
+
+//根据正则，过滤特殊字符只允许输入汉字
+- (NSString *)filterCharactor:(NSString *)string withRegex:(NSString *)regexStr{
+    NSString *searchText = string;
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionCaseInsensitive error:&error];
+    NSString *result = [regex stringByReplacingMatchesInString:searchText options:NSMatchingReportCompletion range:NSMakeRange(0, searchText.length) withTemplate:@""];
+    return result;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // string.length为0，表明没有输入字符，应该是正在删除，应该返回YES。
+    if (string.length == 0) {
+        return YES;
+    }
+    NSString *text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSLog(@"输入:%@",text);
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self.view endEditing:YES];
+    return YES;
+}
 
 
 - (void)buttonClick:(UIButton *)sender{

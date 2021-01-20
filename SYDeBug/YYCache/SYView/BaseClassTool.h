@@ -12,9 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseClassTool : NSObject
 
-+ (UIView *)backView;
-+ (UIView *)lineView;
-
 + (UILabel *)labelWithFont:(CGFloat)font
                  textColor:(UIColor *)textColor
              textAlignment:(NSTextAlignment)textAlignment;
