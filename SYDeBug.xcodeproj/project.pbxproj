@@ -101,6 +101,16 @@
 		BAD714F82490ABBF008705C6 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD714F72490ABBF008705C6 /* CalendarViewController.m */; };
 		BADCA4AC24935D6B00026276 /* UIButton+SYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = BADCA4AB24935D6B00026276 /* UIButton+SYCountDown.m */; };
 		BAE3948325A8398F00E1472A /* SYIndexesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE3948225A8398F00E1472A /* SYIndexesViewController.m */; };
+		BAE62FC925B972A000BFE520 /* SGPagingIndexVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FC825B972A000BFE520 /* SGPagingIndexVc.m */; };
+		BAE62FCD25B972FF00BFE520 /* SGPagingListVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FCC25B972FF00BFE520 /* SGPagingListVc.m */; };
+		BAE62FE325B9744200BFE520 /* UIButton+SGPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FD325B9744200BFE520 /* UIButton+SGPagingView.m */; };
+		BAE62FE425B9744200BFE520 /* UIView+SGPagingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FD425B9744200BFE520 /* UIView+SGPagingView.m */; };
+		BAE62FE525B9744200BFE520 /* SGPageContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FD625B9744200BFE520 /* SGPageContentScrollView.m */; };
+		BAE62FE625B9744200BFE520 /* SGPageContentCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FD925B9744200BFE520 /* SGPageContentCollectionView.m */; };
+		BAE62FE725B9744200BFE520 /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FDB25B9744200BFE520 /* SGPageTitleView.m */; };
+		BAE62FE825B9744200BFE520 /* SGPageTitleViewConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FDC25B9744200BFE520 /* SGPageTitleViewConfigure.m */; };
+		BAE62FE925B9744200BFE520 /* SGPagingViewPopGestureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FE025B9744200BFE520 /* SGPagingViewPopGestureVC.m */; };
+		BAE62FED25B9756900BFE520 /* UIScrollView+GestureConflict.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE62FEC25B9756900BFE520 /* UIScrollView+GestureConflict.m */; };
 		BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEACAF1249B387B0081CD22 /* XCPhotoBrowser.m */; };
 		BAEACB18249B3D070081CD22 /* NYXProgressiveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEACAFB249B3D060081CD22 /* NYXProgressiveImageView.m */; };
 		BAEACB19249B3D070081CD22 /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = BAEACAFD249B3D060081CD22 /* readme.md */; };
@@ -326,6 +336,27 @@
 		BADCA4AB24935D6B00026276 /* UIButton+SYCountDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SYCountDown.m"; sourceTree = "<group>"; };
 		BAE3948125A8398F00E1472A /* SYIndexesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYIndexesViewController.h; sourceTree = "<group>"; };
 		BAE3948225A8398F00E1472A /* SYIndexesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYIndexesViewController.m; sourceTree = "<group>"; };
+		BAE62FC725B972A000BFE520 /* SGPagingIndexVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGPagingIndexVc.h; sourceTree = "<group>"; };
+		BAE62FC825B972A000BFE520 /* SGPagingIndexVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGPagingIndexVc.m; sourceTree = "<group>"; };
+		BAE62FCB25B972FF00BFE520 /* SGPagingListVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGPagingListVc.h; sourceTree = "<group>"; };
+		BAE62FCC25B972FF00BFE520 /* SGPagingListVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGPagingListVc.m; sourceTree = "<group>"; };
+		BAE62FD125B9744200BFE520 /* UIButton+SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SGPagingView.h"; sourceTree = "<group>"; };
+		BAE62FD225B9744200BFE520 /* UIView+SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGPagingView.h"; sourceTree = "<group>"; };
+		BAE62FD325B9744200BFE520 /* UIButton+SGPagingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SGPagingView.m"; sourceTree = "<group>"; };
+		BAE62FD425B9744200BFE520 /* UIView+SGPagingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGPagingView.m"; sourceTree = "<group>"; };
+		BAE62FD625B9744200BFE520 /* SGPageContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentScrollView.m; sourceTree = "<group>"; };
+		BAE62FD725B9744200BFE520 /* SGPageContentCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentCollectionView.h; sourceTree = "<group>"; };
+		BAE62FD825B9744200BFE520 /* SGPageContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentScrollView.h; sourceTree = "<group>"; };
+		BAE62FD925B9744200BFE520 /* SGPageContentCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentCollectionView.m; sourceTree = "<group>"; };
+		BAE62FDB25B9744200BFE520 /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
+		BAE62FDC25B9744200BFE520 /* SGPageTitleViewConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleViewConfigure.m; sourceTree = "<group>"; };
+		BAE62FDD25B9744200BFE520 /* SGPageTitleViewConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleViewConfigure.h; sourceTree = "<group>"; };
+		BAE62FDE25B9744200BFE520 /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
+		BAE62FE025B9744200BFE520 /* SGPagingViewPopGestureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPagingViewPopGestureVC.m; sourceTree = "<group>"; };
+		BAE62FE125B9744200BFE520 /* SGPagingViewPopGestureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPagingViewPopGestureVC.h; sourceTree = "<group>"; };
+		BAE62FE225B9744200BFE520 /* SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPagingView.h; sourceTree = "<group>"; };
+		BAE62FEB25B9756800BFE520 /* UIScrollView+GestureConflict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GestureConflict.h"; sourceTree = "<group>"; };
+		BAE62FEC25B9756900BFE520 /* UIScrollView+GestureConflict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GestureConflict.m"; sourceTree = "<group>"; };
 		BAEACAF0249B387B0081CD22 /* XCPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCPhotoBrowser.h; sourceTree = "<group>"; };
 		BAEACAF1249B387B0081CD22 /* XCPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPhotoBrowser.m; sourceTree = "<group>"; };
 		BAEACAFB249B3D060081CD22 /* NYXProgressiveImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXProgressiveImageView.m; sourceTree = "<group>"; };
@@ -839,6 +870,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BAE62FC625B9723500BFE520 /* SGPagingViewVc */,
 				BA8735BB25AD363400B8F4E4 /* SYImageView */,
 				BAE3948025A8395B00E1472A /* SYTableViewIndexes */,
 				BA58BC8C2570ED0100D29377 /* SystemPhoto */,
@@ -935,6 +967,74 @@
 				BAE3948225A8398F00E1472A /* SYIndexesViewController.m */,
 			);
 			path = SYTableViewIndexes;
+			sourceTree = "<group>";
+		};
+		BAE62FC625B9723500BFE520 /* SGPagingViewVc */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FCF25B9744200BFE520 /* SGPagingView */,
+				BAE62FC725B972A000BFE520 /* SGPagingIndexVc.h */,
+				BAE62FC825B972A000BFE520 /* SGPagingIndexVc.m */,
+				BAE62FCB25B972FF00BFE520 /* SGPagingListVc.h */,
+				BAE62FCC25B972FF00BFE520 /* SGPagingListVc.m */,
+				BAE62FEB25B9756800BFE520 /* UIScrollView+GestureConflict.h */,
+				BAE62FEC25B9756900BFE520 /* UIScrollView+GestureConflict.m */,
+			);
+			path = SGPagingViewVc;
+			sourceTree = "<group>";
+		};
+		BAE62FCF25B9744200BFE520 /* SGPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FD025B9744200BFE520 /* Category */,
+				BAE62FD525B9744200BFE520 /* SGPageContent */,
+				BAE62FDA25B9744200BFE520 /* SGPageTitle */,
+				BAE62FDF25B9744200BFE520 /* Controller */,
+				BAE62FE225B9744200BFE520 /* SGPagingView.h */,
+			);
+			path = SGPagingView;
+			sourceTree = "<group>";
+		};
+		BAE62FD025B9744200BFE520 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FD125B9744200BFE520 /* UIButton+SGPagingView.h */,
+				BAE62FD225B9744200BFE520 /* UIView+SGPagingView.h */,
+				BAE62FD325B9744200BFE520 /* UIButton+SGPagingView.m */,
+				BAE62FD425B9744200BFE520 /* UIView+SGPagingView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BAE62FD525B9744200BFE520 /* SGPageContent */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FD625B9744200BFE520 /* SGPageContentScrollView.m */,
+				BAE62FD725B9744200BFE520 /* SGPageContentCollectionView.h */,
+				BAE62FD825B9744200BFE520 /* SGPageContentScrollView.h */,
+				BAE62FD925B9744200BFE520 /* SGPageContentCollectionView.m */,
+			);
+			path = SGPageContent;
+			sourceTree = "<group>";
+		};
+		BAE62FDA25B9744200BFE520 /* SGPageTitle */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FDB25B9744200BFE520 /* SGPageTitleView.m */,
+				BAE62FDC25B9744200BFE520 /* SGPageTitleViewConfigure.m */,
+				BAE62FDD25B9744200BFE520 /* SGPageTitleViewConfigure.h */,
+				BAE62FDE25B9744200BFE520 /* SGPageTitleView.h */,
+			);
+			path = SGPageTitle;
+			sourceTree = "<group>";
+		};
+		BAE62FDF25B9744200BFE520 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAE62FE025B9744200BFE520 /* SGPagingViewPopGestureVC.m */,
+				BAE62FE125B9744200BFE520 /* SGPagingViewPopGestureVC.h */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BAEACAEF249B38710081CD22 /* XCPhotoBrowser */ = {
@@ -1286,11 +1386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE62FE325B9744200BFE520 /* UIButton+SGPagingView.m in Sources */,
 				BA818317249A131A0024CF40 /* CalendarDetailViewController.m in Sources */,
 				BAEACB25249B3D070081CD22 /* UIView+Screenshot.m in Sources */,
 				BAC3C87C23681DA50002AF82 /* XibViewController.m in Sources */,
 				BAA76CD6248A275A00D40368 /* SYVideoPlayerControlView.m in Sources */,
 				BA9360CA24DCF6850078EA52 /* SYDownloadButton.m in Sources */,
+				BAE62FCD25B972FF00BFE520 /* SGPagingListVc.m in Sources */,
 				BA9D32FA24A0492400DC545D /* SYDevice.m in Sources */,
 				BA0D5AB0248785B100DD9D99 /* JPVideoPlayerCache.m in Sources */,
 				BAA3FF77237AA10200E122BE /* FMDBVc.m in Sources */,
@@ -1316,14 +1418,17 @@
 				BAC3C883236820DC0002AF82 /* BaseNavigationController.m in Sources */,
 				BAFA4A0824C13CD300F8B0F1 /* SYRefreshFooter.m in Sources */,
 				BA0D5ACD248785CB00DD9D99 /* SYVideoPlayerProgressView.m in Sources */,
+				BAE62FE525B9744200BFE520 /* SGPageContentScrollView.m in Sources */,
 				BA0D5AC2248785B100DD9D99 /* JPVideoPlayerCachePath.m in Sources */,
 				BA0D5ACC248785CB00DD9D99 /* PTSSYHomeHotMainCell.m in Sources */,
 				BAEACB2C249B54310081CD22 /* SYToast.m in Sources */,
 				BAEACB1E249B3D070081CD22 /* UIImage+Resizing.m in Sources */,
 				BAA5B96923794E2700BDBE52 /* GoodsDetailCell.m in Sources */,
 				BA0D5AC1248785B100DD9D99 /* UITableViewCell+WebVideoCache.m in Sources */,
+				BAE62FE425B9744200BFE520 /* UIView+SGPagingView.m in Sources */,
 				BA0D5ACE248785CB00DD9D99 /* PTSSYHomeHotMainController.m in Sources */,
 				BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */,
+				BAE62FED25B9756900BFE520 /* UIScrollView+GestureConflict.m in Sources */,
 				BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */,
 				BA58BC962570F3F100D29377 /* GridViewCell.m in Sources */,
 				BAFD2A1B248F6CBA00D91EE2 /* FileDownloadVc.m in Sources */,
@@ -1339,6 +1444,7 @@
 				BA0D5AB1248785B100DD9D99 /* UIView+WebVideoCache.m in Sources */,
 				BAFD29F3248F260E00D91EE2 /* HTTPSessionManager.m in Sources */,
 				BA58BC9A2570F62B00D29377 /* SystemPhotoDetailViewController.m in Sources */,
+				BAE62FC925B972A000BFE520 /* SGPagingIndexVc.m in Sources */,
 				BAFD2A1E248F6E5000D91EE2 /* FileDownloadCell.m in Sources */,
 				BAC3C86423680F310002AF82 /* ViewController.m in Sources */,
 				BAEACB18249B3D070081CD22 /* NYXProgressiveImageView.m in Sources */,
@@ -1348,6 +1454,7 @@
 				BA0D5ABE248785B100DD9D99 /* JPVideoPlayer.m in Sources */,
 				BAF12F9924BD4A3800DAE099 /* StrConversion.m in Sources */,
 				BAEE667323878D2000BA1FB0 /* AmountCalculationVc.m in Sources */,
+				BAE62FE625B9744200BFE520 /* SGPageContentCollectionView.m in Sources */,
 				BA8735C925AD36B100B8F4E4 /* UIImage+SYQRImage.m in Sources */,
 				BA9D330124A04BCB00DC545D /* UIViewController+Category.m in Sources */,
 				BAFD29F9248F2BE600D91EE2 /* NSString+XCJson.m in Sources */,
@@ -1368,12 +1475,14 @@
 				BAD714F82490ABBF008705C6 /* CalendarViewController.m in Sources */,
 				BA9360D024DD23F90078EA52 /* SYColorLabel.m in Sources */,
 				BA73FB92237BDAF30082FE9B /* FMDBManager.m in Sources */,
+				BAE62FE825B9744200BFE520 /* SGPageTitleViewConfigure.m in Sources */,
 				BA0D5ABB248785B100DD9D99 /* JPVideoPlayerManager.m in Sources */,
 				BAA5B9462378F8C700BDBE52 /* XibTableViewCell.m in Sources */,
 				BAD714F424908064008705C6 /* NSDate+SYExtensions.m in Sources */,
 				BA9551E0247BBDC5001D561F /* NumberAnimation.m in Sources */,
 				BAFD2A14248F695100D91EE2 /* SYDownloaderManger.m in Sources */,
 				BAC3C86F23680F330002AF82 /* main.m in Sources */,
+				BAE62FE925B9744200BFE520 /* SGPagingViewPopGestureVC.m in Sources */,
 				BAFC849B24777245000C525F /* SwitchViewsController.m in Sources */,
 				BAC3C86123680F310002AF82 /* AppDelegate.m in Sources */,
 				BAEACB23249B3D070081CD22 /* UIImage+Reflection.m in Sources */,
@@ -1398,6 +1507,7 @@
 				BA0D5AC0248785B100DD9D99 /* JPVideoPlayerSupportUtils.m in Sources */,
 				BA8782BF25B12CA90003AFB5 /* SYCountDownButton.m in Sources */,
 				BAEACB21249B3D070081CD22 /* UIImage+Rotating.m in Sources */,
+				BAE62FE725B9744200BFE520 /* SGPageTitleView.m in Sources */,
 				BAA3FF83237AA8FA00E122BE /* NSDictionary+ZXPUnicode.m in Sources */,
 				BADCA4AC24935D6B00026276 /* UIButton+SYCountDown.m in Sources */,
 				BAEACB1B249B3D070081CD22 /* NYXImagesHelper.m in Sources */,
