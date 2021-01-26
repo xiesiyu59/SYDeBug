@@ -79,6 +79,8 @@
 		BAA5B96923794E2700BDBE52 /* GoodsDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5B96823794E2700BDBE52 /* GoodsDetailCell.m */; };
 		BAA5B96C23794E9100BDBE52 /* OnPullMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5B96B23794E9100BDBE52 /* OnPullMsgView.m */; };
 		BAA5B96F23794EA400BDBE52 /* DownPullMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5B96E23794EA400BDBE52 /* DownPullMsgView.m */; };
+		BAA7453D25BE71280025FD48 /* CodeInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA7453C25BE71280025FD48 /* CodeInputViewController.m */; };
+		BAA7454125BE95310025FD48 /* SYValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA7454025BE95310025FD48 /* SYValidationCodeView.m */; };
 		BAA76CD6248A275A00D40368 /* SYVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */; };
 		BABB317A24BFE878001B40E1 /* sytoast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317424BFE878001B40E1 /* sytoast_success.png */; };
 		BABB317B24BFE878001B40E1 /* sytoast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317524BFE878001B40E1 /* sytoast_error.png */; };
@@ -299,6 +301,10 @@
 		BAA5B96B23794E9100BDBE52 /* OnPullMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnPullMsgView.m; sourceTree = "<group>"; };
 		BAA5B96D23794EA400BDBE52 /* DownPullMsgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownPullMsgView.h; sourceTree = "<group>"; };
 		BAA5B96E23794EA400BDBE52 /* DownPullMsgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownPullMsgView.m; sourceTree = "<group>"; };
+		BAA7453B25BE71280025FD48 /* CodeInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeInputViewController.h; sourceTree = "<group>"; };
+		BAA7453C25BE71280025FD48 /* CodeInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeInputViewController.m; sourceTree = "<group>"; };
+		BAA7453F25BE95310025FD48 /* SYValidationCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYValidationCodeView.h; sourceTree = "<group>"; };
+		BAA7454025BE95310025FD48 /* SYValidationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYValidationCodeView.m; sourceTree = "<group>"; };
 		BAA76CD4248A275A00D40368 /* SYVideoPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYVideoPlayerControlView.h; sourceTree = "<group>"; };
 		BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYVideoPlayerControlView.m; sourceTree = "<group>"; };
 		BABB317424BFE878001B40E1 /* sytoast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sytoast_success.png; sourceTree = "<group>"; };
@@ -827,6 +833,17 @@
 			path = GoodsDetailLayout;
 			sourceTree = "<group>";
 		};
+		BAA7453A25BE71130025FD48 /* CodeInputVc */ = {
+			isa = PBXGroup;
+			children = (
+				BAA7453B25BE71280025FD48 /* CodeInputViewController.h */,
+				BAA7453C25BE71280025FD48 /* CodeInputViewController.m */,
+				BAA7453F25BE95310025FD48 /* SYValidationCodeView.h */,
+				BAA7454025BE95310025FD48 /* SYValidationCodeView.m */,
+			);
+			path = CodeInputVc;
+			sourceTree = "<group>";
+		};
 		BAA76CD3248A274300D40368 /* SYJPVideoPlayerControlView */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,6 +887,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BAA7453A25BE71130025FD48 /* CodeInputVc */,
 				BAE62FC625B9723500BFE520 /* SGPagingViewVc */,
 				BA8735BB25AD363400B8F4E4 /* SYImageView */,
 				BAE3948025A8395B00E1472A /* SYTableViewIndexes */,
@@ -1496,12 +1514,14 @@
 				BAEACB1D249B3D070081CD22 /* UIImage+Masking.m in Sources */,
 				BA47EE7F24E3C79D00FC85BD /* SYGuideMaskView.m in Sources */,
 				BAF12F9A24BD4A3800DAE099 /* NSString+XSYTimeDHMS.m in Sources */,
+				BAA7454125BE95310025FD48 /* SYValidationCodeView.m in Sources */,
 				BA170336247E51A7006620F2 /* MainModel.m in Sources */,
 				BA0D5ABA248785B100DD9D99 /* JPVideoPlayerCellProtocol.m in Sources */,
 				BA7E7818249CB39D0053129E /* SYProgressHUD.m in Sources */,
 				BAA3FF7B237AA22E00E122BE /* UIWindow+DebugWindow.m in Sources */,
 				BAFD042F24DB99E600788CF9 /* SYiCarouselViewController.m in Sources */,
 				BA58BC902570ED1600D29377 /* SystemPhotoViewController.m in Sources */,
+				BAA7453D25BE71280025FD48 /* CodeInputViewController.m in Sources */,
 				BA58B6B6247F4C9F00885A7E /* LabelViewModel.m in Sources */,
 				BAA5B96323794D5200BDBE52 /* GoodsDetailLayout.m in Sources */,
 				BA0D5AC0248785B100DD9D99 /* JPVideoPlayerSupportUtils.m in Sources */,
