@@ -53,6 +53,9 @@
 		BA8735C925AD36B100B8F4E4 /* UIImage+SYQRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735C825AD36B100B8F4E4 /* UIImage+SYQRImage.m */; };
 		BA8735D225AD393900B8F4E4 /* UIImage+SYGradualImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8735D025AD393900B8F4E4 /* UIImage+SYGradualImage.m */; };
 		BA8782BF25B12CA90003AFB5 /* SYCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8782BE25B12CA90003AFB5 /* SYCountDownButton.m */; };
+		BA8FD76A25C7EFA00087C24E /* SYSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD76925C7EFA00087C24E /* SYSideMenuViewController.m */; };
+		BA8FD76F25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD76E25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.m */; };
+		BA8FD77825C7F3600087C24E /* InfoLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8FD77725C7F3600087C24E /* InfoLeftViewController.m */; };
 		BA92337E24E22CA100F33255 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92337D24E22CA100F33255 /* CollectionViewController.m */; };
 		BA92E1DD23710F400007CA11 /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA92E1DF23710F400007CA11 /* XibViewController.xib */; };
 		BA9360CA24DCF6850078EA52 /* SYDownloadButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9360C924DCF6850078EA52 /* SYDownloadButton.m */; };
@@ -246,6 +249,13 @@
 		BA8735D125AD393900B8F4E4 /* UIImage+SYGradualImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SYGradualImage.h"; sourceTree = "<group>"; };
 		BA8782BD25B12CA90003AFB5 /* SYCountDownButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYCountDownButton.h; sourceTree = "<group>"; };
 		BA8782BE25B12CA90003AFB5 /* SYCountDownButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYCountDownButton.m; sourceTree = "<group>"; };
+		BA8FD76825C7EFA00087C24E /* SYSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYSideMenuViewController.h; sourceTree = "<group>"; };
+		BA8FD76925C7EFA00087C24E /* SYSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYSideMenuViewController.m; sourceTree = "<group>"; };
+		BA8FD76D25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SYSideMenuViewController.h"; sourceTree = "<group>"; };
+		BA8FD76E25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SYSideMenuViewController.m"; sourceTree = "<group>"; };
+		BA8FD77125C7F01F0087C24E /* SYSideMenuHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYSideMenuHeader.h; sourceTree = "<group>"; };
+		BA8FD77625C7F3600087C24E /* InfoLeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoLeftViewController.h; sourceTree = "<group>"; };
+		BA8FD77725C7F3600087C24E /* InfoLeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoLeftViewController.m; sourceTree = "<group>"; };
 		BA92337C24E22CA100F33255 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		BA92337D24E22CA100F33255 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		BA92E1DE23710F400007CA11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/XibViewController.xib; sourceTree = "<group>"; };
@@ -694,6 +704,28 @@
 			path = SYCountDownButton;
 			sourceTree = "<group>";
 		};
+		BA8FD76625C7EF380087C24E /* SYSideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA8FD76725C7EF840087C24E /* SYSideMenu */,
+				BA8FD77625C7F3600087C24E /* InfoLeftViewController.h */,
+				BA8FD77725C7F3600087C24E /* InfoLeftViewController.m */,
+			);
+			path = SYSideViewController;
+			sourceTree = "<group>";
+		};
+		BA8FD76725C7EF840087C24E /* SYSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BA8FD76825C7EFA00087C24E /* SYSideMenuViewController.h */,
+				BA8FD76925C7EFA00087C24E /* SYSideMenuViewController.m */,
+				BA8FD76D25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.h */,
+				BA8FD76E25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.m */,
+				BA8FD77125C7F01F0087C24E /* SYSideMenuHeader.h */,
+			);
+			path = SYSideMenu;
+			sourceTree = "<group>";
+		};
 		BA92337B24E22C7E00F33255 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -887,6 +919,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BA8FD76625C7EF380087C24E /* SYSideViewController */,
 				BAA7453A25BE71130025FD48 /* CodeInputVc */,
 				BAE62FC625B9723500BFE520 /* SGPagingViewVc */,
 				BA8735BB25AD363400B8F4E4 /* SYImageView */,
@@ -1441,6 +1474,7 @@
 				BA0D5ACC248785CB00DD9D99 /* PTSSYHomeHotMainCell.m in Sources */,
 				BAEACB2C249B54310081CD22 /* SYToast.m in Sources */,
 				BAEACB1E249B3D070081CD22 /* UIImage+Resizing.m in Sources */,
+				BA8FD76F25C7EFD10087C24E /* UIViewController+SYSideMenuViewController.m in Sources */,
 				BAA5B96923794E2700BDBE52 /* GoodsDetailCell.m in Sources */,
 				BA0D5AC1248785B100DD9D99 /* UITableViewCell+WebVideoCache.m in Sources */,
 				BAE62FE425B9744200BFE520 /* UIView+SGPagingView.m in Sources */,
@@ -1462,6 +1496,7 @@
 				BA0D5AB1248785B100DD9D99 /* UIView+WebVideoCache.m in Sources */,
 				BAFD29F3248F260E00D91EE2 /* HTTPSessionManager.m in Sources */,
 				BA58BC9A2570F62B00D29377 /* SystemPhotoDetailViewController.m in Sources */,
+				BA8FD76A25C7EFA00087C24E /* SYSideMenuViewController.m in Sources */,
 				BAE62FC925B972A000BFE520 /* SGPagingIndexVc.m in Sources */,
 				BAFD2A1E248F6E5000D91EE2 /* FileDownloadCell.m in Sources */,
 				BAC3C86423680F310002AF82 /* ViewController.m in Sources */,
@@ -1479,6 +1514,7 @@
 				BAA5B95C23794C6500BDBE52 /* GoodsDetailViewController.m in Sources */,
 				BAFC84A62477DA36000C525F /* LocalDataTool.m in Sources */,
 				BAEACB1F249B3D070081CD22 /* UIImage+Enhancing.m in Sources */,
+				BA8FD77825C7F3600087C24E /* InfoLeftViewController.m in Sources */,
 				BAEACB1C249B3D070081CD22 /* UIImage+Blurring.m in Sources */,
 				BAA5B96C23794E9100BDBE52 /* OnPullMsgView.m in Sources */,
 				BA975E0A24AD7FE3003FEE71 /* PrivacyPermissionManager.m in Sources */,

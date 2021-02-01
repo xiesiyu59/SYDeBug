@@ -12,6 +12,8 @@
 #import <Aspects.h>
 #import "YYCacheViewController.h"
 #import <UserNotifications/UserNotifications.h>
+#import "InfoLeftViewController.h"
+#import "SYSideMenuHeader.h"
 
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
 
@@ -26,7 +28,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     BaseNavigationController *navc = [[BaseNavigationController alloc] initWithRootViewController:[ViewController new]];
 
-    self.window.rootViewController = navc;
+    SYSideMenuViewController *sideMenuVc = [[SYSideMenuViewController alloc] initWithContentViewController:navc leftSideViewController:[[InfoLeftViewController alloc] init]];
+    
+    self.window.rootViewController = sideMenuVc;
     [self.window makeKeyAndVisible];
     //路由配置
     [self routeConfig];
