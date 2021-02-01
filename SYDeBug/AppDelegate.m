@@ -25,6 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     BaseNavigationController *navc = [[BaseNavigationController alloc] initWithRootViewController:[ViewController new]];
+
     self.window.rootViewController = navc;
     [self.window makeKeyAndVisible];
     //路由配置
