@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, SYSideModel){
     SYSideMenuRightModel
 };
 
-#define DefaultLeftVisibleOffset (kScreenWidth-80)
+#define DefaultLeftVisibleOffset (kScreenWidth-45)
 
 #define LEFT_TAG   100
 #define CENTER_TAG 101
@@ -193,8 +193,8 @@ typedef NS_ENUM(NSInteger, SYSideModel){
     _coverView.alpha = alphaValue;
     CGPoint leftCenter = CGPointMake(pointX, kScreenHeight/2);
     NSLog(@"%f",leftCenter.x);
-    if (leftCenter.x > (kScreenWidth == 375?107:127)) {
-        leftCenter.x = kScreenWidth == 375?107:127;
+    if (leftCenter.x > (kScreenWidth == 375?142:162)) {
+        leftCenter.x = kScreenWidth == 375?142:162;
     }
     _leftSideViewController.view.center = leftCenter;
 }

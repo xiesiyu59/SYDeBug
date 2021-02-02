@@ -28,9 +28,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     BaseNavigationController *navc = [[BaseNavigationController alloc] initWithRootViewController:[ViewController new]];
 
-    SYSideMenuViewController *sideMenuVc = [[SYSideMenuViewController alloc] initWithContentViewController:navc leftSideViewController:[[InfoLeftViewController alloc] init]];
+//    SYSideMenuViewController *sideMenuVc = [[SYSideMenuViewController alloc] initWithContentViewController:navc leftSideViewController:[[InfoLeftViewController alloc] init]];
     
-    self.window.rootViewController = sideMenuVc;
+    self.window.rootViewController = navc;
     [self.window makeKeyAndVisible];
     //路由配置
     [self routeConfig];

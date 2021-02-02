@@ -78,44 +78,44 @@ static NSString *identifier = @"cell";
     }];
     
     
-//    self.anGestureRecognizerView = [[UIView alloc] initWithFrame:CGRectMake(-kScreenWidth-80, 0, kScreenWidth+80, kScreenHeight)];
-//    self.anGestureRecognizerView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.6];
-//    [self.view addSubview:self.anGestureRecognizerView];
-//
-//    UIPanGestureRecognizer * selfPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(selfPanView:)];
-//    [self.view addGestureRecognizer:selfPan];
+    self.anGestureRecognizerView = [[UIView alloc] initWithFrame:CGRectMake(-kScreenWidth, 0, kScreenWidth, kScreenHeight)];
+    self.anGestureRecognizerView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.6];
+    [self.view addSubview:self.anGestureRecognizerView];
+
+    UIPanGestureRecognizer * selfPan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(selfPanView:)];
+    [self.view addGestureRecognizer:selfPan];
     
     
 }
 
-//- (void)selfPanView:(UIPanGestureRecognizer *)recognizer{
-//
-//    if (recognizer.state == UIGestureRecognizerStateChanged) {
-//
+- (void)selfPanView:(UIPanGestureRecognizer *)recognizer{
+
+    if (recognizer.state == UIGestureRecognizerStateChanged) {
+
 //        NSLog(@"%f--%f",self.anGestureRecognizerView.origin.x,self.view.origin.x);
-//        CGPoint translation = [recognizer translationInView:self.view];
-//        if (self.anGestureRecognizerView.origin.x < -80) {
-//            self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
-//        }else{
-//            NSLog(@"%f",translation.x);
-//            if (translation.x  < 0) {
-//                self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
-//            }
-//        }
-//        [recognizer setTranslation:CGPointZero inView:self.view];
-//
-//    }else if (recognizer.state == UIGestureRecognizerStateEnded){
-//
-//        NSLog(@"%f",self.anGestureRecognizerView.origin.x);
-//        [UIView animateWithDuration:0.25f animations:^{
-//            if (self.anGestureRecognizerView.origin.x > -(kScreenWidth/2)) {
-//                self.anGestureRecognizerView.frame = CGRectMake(-80, 0, kScreenWidth+80, kScreenHeight);
-//            }else{
-//                self.anGestureRecognizerView.frame = CGRectMake(-kScreenWidth-80, 0, kScreenWidth+80, kScreenHeight);
-//            }
-//        }];
-//    }
-//}
+        CGPoint translation = [recognizer translationInView:self.view];
+        if (self.anGestureRecognizerView.origin.x < -80) {
+            self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
+        }else{
+            NSLog(@"%f",translation.x);
+            if (translation.x  < 0) {
+                self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
+            }
+        }
+        [recognizer setTranslation:CGPointZero inView:self.view];
+
+    }else if (recognizer.state == UIGestureRecognizerStateEnded){
+
+        NSLog(@"%f",self.anGestureRecognizerView.origin.x);
+        [UIView animateWithDuration:0.25f animations:^{
+            if (self.anGestureRecognizerView.origin.x > -(kScreenWidth/2)) {
+                self.anGestureRecognizerView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+            }else{
+                self.anGestureRecognizerView.frame = CGRectMake(-kScreenWidth, 0, kScreenWidth, kScreenHeight);
+            }
+        }];
+    }
+}
 
 #pragma mark -- <UITableViewDataSource,UITableViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

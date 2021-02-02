@@ -8,6 +8,8 @@
 
 #import "InfoLeftViewController.h"
 #import "UIView+SYView.h"
+#import "CodeInputViewController.h"
+#import "SYSideMenuHeader.h"
 
 @interface InfoLeftViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -57,7 +59,7 @@
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 80, 0, 0));
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 45, 0, 0));
     }];
 }
 
@@ -106,6 +108,13 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     
     return [UIView new];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.sideMenuViewController hiddenAll];
+    CodeInputViewController *vc = [[CodeInputViewController alloc] init];
+    [[UIViewController getCurrentVC].navigationController pushViewController:vc animated:YES];
 }
 
 
