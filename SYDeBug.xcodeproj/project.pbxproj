@@ -100,6 +100,8 @@
 		BAC3C87C23681DA50002AF82 /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3C87A23681DA50002AF82 /* XibViewController.m */; };
 		BAC3C8802368204D0002AF82 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3C87F2368204D0002AF82 /* BaseViewController.m */; };
 		BAC3C883236820DC0002AF82 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3C882236820DC0002AF82 /* BaseNavigationController.m */; };
+		BACD8CAF25ECCF74009A8C44 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACD8CB125ECCF74009A8C44 /* InfoPlist.strings */; };
+		BACD8CBA25ECD1A0009A8C44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BACD8CBC25ECD1A0009A8C44 /* Localizable.strings */; };
 		BACE86C724BBEDC800B85AE1 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BACE86C624BBEDC800B85AE1 /* TableView.m */; };
 		BACF6531247D022C00851E8B /* ARCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BACF6530247D022C00851E8B /* ARCViewController.m */; };
 		BAD714F424908064008705C6 /* NSDate+SYExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD714F324908064008705C6 /* NSDate+SYExtensions.m */; };
@@ -340,6 +342,10 @@
 		BAC3C87F2368204D0002AF82 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		BAC3C881236820DC0002AF82 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		BAC3C882236820DC0002AF82 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		BACD8CB025ECCF74009A8C44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BACD8CB325ECCF78009A8C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BACD8CBB25ECD1A0009A8C44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BACD8CBD25ECD1A4009A8C44 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BACE86C524BBEDC800B85AE1 /* TableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
 		BACE86C624BBEDC800B85AE1 /* TableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
 		BACF652F247D022C00851E8B /* ARCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARCViewController.h; sourceTree = "<group>"; };
@@ -944,6 +950,7 @@
 				BAA3FF78237AA22E00E122BE /* DEBUG */,
 				BAA3FF74237AA0F200E122BE /* FMDB */,
 				BAA5B9532379310E00BDBE52 /* 淘宝列表详情页 */,
+				BACD8C9E25ECC812009A8C44 /* Language */,
 				BAC3C85F23680F310002AF82 /* AppDelegate.h */,
 				BAC3C86023680F310002AF82 /* AppDelegate.m */,
 				BAC3C881236820DC0002AF82 /* BaseNavigationController.h */,
@@ -968,6 +975,15 @@
 				BAC3C878236810740002AF82 /* PrefixHeader.pch */,
 			);
 			path = SYDeBug;
+			sourceTree = "<group>";
+		};
+		BACD8C9E25ECC812009A8C44 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				BACD8CB125ECCF74009A8C44 /* InfoPlist.strings */,
+				BACD8CBC25ECD1A0009A8C44 /* Localizable.strings */,
+			);
+			path = Language;
 			sourceTree = "<group>";
 		};
 		BACE86C424BBEDBA00B85AE1 /* TableView */ = {
@@ -1353,7 +1369,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACD8CBA25ECD1A0009A8C44 /* Localizable.strings in Resources */,
 				BA92E1DD23710F400007CA11 /* XibViewController.xib in Resources */,
+				BACD8CAF25ECCF74009A8C44 /* InfoPlist.strings in Resources */,
 				BABB317B24BFE878001B40E1 /* sytoast_error.png in Resources */,
 				BABB317D24BFE878001B40E1 /* sytoast_error@3x.png in Resources */,
 				BAA5B9482378F91300BDBE52 /* XibTableViewCell.xib in Resources */,
@@ -1611,6 +1629,24 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		BACD8CB125ECCF74009A8C44 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BACD8CB025ECCF74009A8C44 /* en */,
+				BACD8CB325ECCF78009A8C44 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BACD8CBC25ECD1A0009A8C44 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BACD8CBB25ECD1A0009A8C44 /* en */,
+				BACD8CBD25ECD1A4009A8C44 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1666,6 +1702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Language/en.lproj/InfoPlist.strings";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1720,6 +1757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Language/en.lproj/InfoPlist.strings";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

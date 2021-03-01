@@ -50,7 +50,9 @@ static NSString *identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataArray = @[@"第一行",@"淘宝详情",@"FMDB",@"金额计算",@"首页样式",@"wkWebView",@"上下切换视图",@"YYCache",@"数字动画",@"ARC",@"文件下载",@"日历"];
+//    NSString *name = NSLocalizedString(@"first_line", nil);
+    NSString *name2 = NSLocalizedStringFromTable(@"first_line", @"Localizable", nil);
+    self.dataArray = @[name2,@"淘宝详情",@"FMDB",@"金额计算",@"首页样式",@"wkWebView",@"上下切换视图",@"YYCache",@"数字动画",@"ARC",@"文件下载",@"日历"];
     [self initWithInitialization];
 }
 
@@ -98,7 +100,7 @@ static NSString *identifier = @"cell";
             self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
         }else{
             NSLog(@"%f",translation.x);
-            if (translation.x  < 0) {
+            if (translation.x < 0) {
                 self.anGestureRecognizerView.transform = CGAffineTransformTranslate(self.anGestureRecognizerView.transform, translation.x, 0);
             }
         }

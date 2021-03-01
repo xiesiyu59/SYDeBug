@@ -50,8 +50,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self appEnterBackground];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
     NSLog(@"将要显示");
 }
 
@@ -81,7 +79,6 @@
 - (void)viewDidDisappear:(BOOL)animated{
     
     [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     NSLog(@"已经消失");
 }
 
@@ -120,18 +117,12 @@
     }
 }
 
-// - 事件处理
-/** 程序进入后台的通知的事件监听 */
--(void)appEnterBackground{
-    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
-}
-/** 程序被kill */
--(void)applicationWillTerminate{
-    //  - 监听到 app 被kill时候的回调....
-    NSLog(@"dealloc%@",[UIViewController getCurrentVC]);
-}
 
 
+- (void)dealloc{
+    
+    NSLog(@"%@  dealloc",NSStringFromClass([self class]));
+}
 
 - (BOOL)sy_interactivePopDisabled{
     

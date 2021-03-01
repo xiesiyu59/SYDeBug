@@ -22,15 +22,11 @@ static NSString *identifier = @"cell";
 @property (nonatomic, strong)UIView *headerView;
 @property (nonatomic, assign)NSInteger indexPage;
 @property (nonatomic, assign)NSInteger statusTag;
-
+@property (nonatomic, assign)CGFloat kHeaderImageHeight;
 
 @end
 
-@implementation HomeVc {
-    
-    CGFloat kHeaderImageHeight;
-    
-}
+@implementation HomeVc
 
 
 - (BOOL)sy_preferredNavigationBarHidden{
@@ -46,12 +42,10 @@ static NSString *identifier = @"cell";
 
 - (instancetype)init{
     if (self = [super init]) {
-        kHeaderImageHeight = [UIScreen mainScreen].bounds.size.width/16.f*9;
-        
+        self.kHeaderImageHeight = [UIScreen mainScreen].bounds.size.width/16.f*9;
     }
     return self;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,7 +93,7 @@ static NSString *identifier = @"cell";
     
     
     self.xsyTableView = [[TableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    self.xsyTableView.contentInset = UIEdgeInsetsMake(kHeaderImageHeight, 0, 0, 0);
+    self.xsyTableView.contentInset = UIEdgeInsetsMake(self.kHeaderImageHeight, 0, 0, 0);
     self.xsyTableView.delegate = self;
     self.xsyTableView.dataSource = self;
     self.xsyTableView.tableFooterView = [UIView new];
@@ -114,7 +108,7 @@ static NSString *identifier = @"cell";
     [self.view addSubview:self.headerView];
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.xsyTableView.mas_width);
-        make.height.mas_equalTo(kHeaderImageHeight);
+        make.height.mas_equalTo(self.kHeaderImageHeight);
     }];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -129,12 +123,13 @@ static NSString *identifier = @"cell";
     }];
     
     
+    __weak __typeof__(self) weakSelf = self;
     self.xsyTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self initWithinitializationDataSourceFooter:NO];
+        [weakSelf initWithinitializationDataSourceFooter:NO];
     }];
     
     SYRefreshFooter *footer = [SYRefreshFooter footerHasTopSapceWithRefreshingBlock:^{
-        [self initWithinitializationDataSourceFooter:YES];
+        [weakSelf initWithinitializationDataSourceFooter:YES];
     }];
 //    footer.hasTopSpace = 40;
     self.xsyTableView.mj_footer = footer;
@@ -151,11 +146,11 @@ static NSString *identifier = @"cell";
     CGFloat y = scrollView.contentOffset.y;
     NSLog(@"y is %0.f",y);
     if (y >= 0) {
-        self.headerView.mj_y = -kHeaderImageHeight;
-    }else if (y <= -kHeaderImageHeight){
+        self.headerView.mj_y = -self.kHeaderImageHeight;
+    }else if (y <= -self.kHeaderImageHeight){
         self.headerView.mj_y = 0;
     }else{
-        self.headerView.mj_y = -y - kHeaderImageHeight;
+        self.headerView.mj_y = -y - self.kHeaderImageHeight;
     }
     
     if (self.xsyTableView.mj_header.state == MJRefreshStatePulling) {

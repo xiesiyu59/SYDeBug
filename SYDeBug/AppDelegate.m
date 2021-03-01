@@ -39,7 +39,22 @@
     
     [self registerNotification];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
+    
     return YES;
+}
+
+// - 事件处理
+/** 程序进入后台的通知的事件监听 */
+-(void)appEnterBackground{
+    [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:nil];
+}
+/** 程序被kill */
+-(void)applicationWillTerminate{
+    //  - 监听到 app 被kill时候的回调....
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"kill");
+    
 }
 
 - (void)reachabilityManagerConfig{

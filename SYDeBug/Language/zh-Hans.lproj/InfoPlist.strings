@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  SYDeBug
+
+  Created by xiesiyu on 2021/3/1.
+  Copyright © 2021 xiesiyu. All rights reserved.
+*/
+
+CFBundleDisplayName = "思宇测试";

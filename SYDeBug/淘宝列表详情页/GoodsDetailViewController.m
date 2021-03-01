@@ -15,6 +15,10 @@
 
 @implementation GoodsDetailViewController
 
+- (BOOL)sy_interactivePopDisabled{
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
