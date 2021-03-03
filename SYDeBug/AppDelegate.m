@@ -36,13 +36,21 @@
     [self routeConfig];
     //网路检测配置
     [self reachabilityManagerConfig];
-    
+    //注册通知
     [self registerNotification];
-    
+    //获取系统语言
+    [self getCurrentLanguage];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
     
     return YES;
 }
+
+- (void)getCurrentLanguage{
+    
+    NSString *pfLanguageCode = [NSLocale preferredLanguages][0];
+    NSLog(@"%@", pfLanguageCode);
+}
+
 
 // - 事件处理
 /** 程序进入后台的通知的事件监听 */
@@ -89,7 +97,6 @@
             // 不允许授权
         }
     }];
-    
     
     // 获取用户对通知的设置
     // 通过settings.authorizationStatus 来处理用户没有打开通知授权的情况
