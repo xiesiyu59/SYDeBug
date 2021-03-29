@@ -24,5 +24,7 @@ target 'SYDeBug' do
   pod 'GBDeviceInfo'
   pod 'MBProgressHUD'
   pod 'iCarousel'
+  pod 'RATreeView'
+  pod 'BRPickerView'
  
 end

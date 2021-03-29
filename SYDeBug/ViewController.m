@@ -171,9 +171,9 @@ static NSString *identifier = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0) {
-        //XibViewController //SYiCarouselViewController //FF14E7SViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController  //SGPagingIndexVc
-        //CodeInputViewController
-        [self pushToViewControllerWithName:@"LocationNoticeViewController" param:nil];
+        //XibViewController //SYiCarouselViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController  //SGPagingIndexVc
+        //CodeInputViewController //MakeAQuestionViewController // SYRATreeViewVc //SYBRPickerViewVc
+        [self pushToViewControllerWithName:@"SYBRPickerViewVc" param:nil];
         
     }else if (indexPath.row == 1){
         

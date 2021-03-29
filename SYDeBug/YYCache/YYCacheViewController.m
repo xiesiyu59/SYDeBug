@@ -203,6 +203,7 @@
     
     self.textField = [BaseClassTool textFieldWithFont:18 textColor:[UIColor blackColor] keyboardType:UIKeyboardTypeDefault returnKeyType:UIReturnKeyDone placeholder:@"输入" text:@""];
     self.textField.delegate = self;
+    self.textField.clearButtonMode  = UITextFieldViewModeAlways;
     [self.textField setLXCornerdious:4];
     [self.textField setLXBorderWidth:1.0f borderColor:[UIColor blackColor]];
     [self.textField addTarget:self action:@selector(textFieldChange:) forControlEvents:UIControlEventEditingChanged];

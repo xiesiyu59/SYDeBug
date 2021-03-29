@@ -16,6 +16,18 @@ PODS:
     - AFNetworking/NSURLSession
   - AlipaySDK-iOS (15.7.4)
   - Aspects (1.4.1)
+  - BRPickerView (2.7.3):
+    - BRPickerView/AddressPickerView (= 2.7.3)
+    - BRPickerView/Base (= 2.7.3)
+    - BRPickerView/DatePickerView (= 2.7.3)
+    - BRPickerView/StringPickerView (= 2.7.3)
+  - BRPickerView/AddressPickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.7.3)
+  - BRPickerView/DatePickerView (2.7.3):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.7.3):
+    - BRPickerView/Base
   - FDFullscreenPopGesture (1.1)
   - FLEX (4.1.1)
   - FMDB (2.7.5):
@@ -30,6 +42,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.4.3)
   - PPCounter (0.6.0)
+  - RATreeView (2.1.2)
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
@@ -45,6 +58,7 @@ DEPENDENCIES:
   - AFNetworking
   - AlipaySDK-iOS
   - Aspects
+  - BRPickerView
   - FDFullscreenPopGesture
   - FLEX
   - FMDB
@@ -55,6 +69,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - PPCounter
+  - RATreeView
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
@@ -66,6 +81,7 @@ SPEC REPOS:
     - AFNetworking
     - AlipaySDK-iOS
     - Aspects
+    - BRPickerView
     - FDFullscreenPopGesture
     - FLEX
     - FMDB
@@ -76,6 +92,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - PPCounter
+    - RATreeView
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
@@ -86,6 +103,7 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BRPickerView: 9cc11880ac79c4872d081ccb88f306224c1501d7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -96,12 +114,13 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   PPCounter: da37c0d8bfeeffe7ef4c331468203e17f2e30fbf
+  RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a6bbf5e313e8fe9f960a369b88248bd3779ff099
+PODFILE CHECKSUM: c46995798b4a007764e64c4bbf279648809bc930
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
