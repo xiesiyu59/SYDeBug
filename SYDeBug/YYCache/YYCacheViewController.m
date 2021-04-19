@@ -290,7 +290,7 @@
     }else if (sender.tag == 4){
         
         [SYProgressHUD messageSuccess:@"成功了"];
-//        [SYProgressHUD progressMessage:@""];
+//        [SYProgressHUD progressMessage:@"菊花文字提示"];
 //        [SYProgressHUD progressView:self.view Message:@"下载中..."];
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //            [SYProgressHUD hideHUD];

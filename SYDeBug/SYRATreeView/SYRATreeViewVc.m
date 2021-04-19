@@ -57,9 +57,37 @@
     RaTreeModel *xinchengqu = [RaTreeModel dataObjectWithName:@"新城区" children:nil];
     RaTreeModel *xian = [RaTreeModel dataObjectWithName:@"西安" children:@[yantaqu,xinchengqu]];
     RaTreeModel *shanxi = [RaTreeModel dataObjectWithName:@"陕西" children:@[baoji,xian]];
-    
+
     self.modelArray = [NSMutableArray array];
     [self.modelArray addObject:shanxi];
+    [self.modelArray addObject:shanxi];
+    [self.modelArray addObject:shanxi];
+    [self.modelArray addObject:shanxi];
+    
+    
+    
+//    NSMutableArray *iArray = [NSMutableArray array];
+//    NSMutableArray *jArray = [NSMutableArray array];
+//    NSMutableArray *kArray = [NSMutableArray array];
+//
+//    for (NSInteger k = 0; k < 5; k ++) {
+//        RaTreeModel *model = [RaTreeModel dataObjectWithName:[NSString stringWithFormat:@"第%ld题",k] children:nil];
+//        [kArray addObject:model];
+//    }
+//
+//    for (NSInteger j = 0; j < 2; j ++) {
+//
+//        RaTreeModel *model = [RaTreeModel dataObjectWithName:[NSString stringWithFormat:@"第%ld卷",j] children:kArray];
+//        [jArray addObject:model];
+//    }
+//
+//    for (NSInteger i = 0; i < 4; i ++) {
+//
+//        RaTreeModel *model = [RaTreeModel dataObjectWithName:[NSString stringWithFormat:@"第%ld章",i] children:jArray];
+//        [iArray addObject:model];
+//    }
+//
+//    self.modelArray = iArray;
 }
 
 
