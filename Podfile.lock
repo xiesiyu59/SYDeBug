@@ -28,6 +28,7 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.7.3):
     - BRPickerView/Base
+  - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - FLEX (4.1.1)
   - FMDB (2.7.5):
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - AlipaySDK-iOS
   - Aspects
   - BRPickerView
+  - DZNEmptyDataSet
   - FDFullscreenPopGesture
   - FLEX
   - FMDB
@@ -82,6 +84,7 @@ SPEC REPOS:
     - AlipaySDK-iOS
     - Aspects
     - BRPickerView
+    - DZNEmptyDataSet
     - FDFullscreenPopGesture
     - FLEX
     - FMDB
@@ -104,6 +107,7 @@ SPEC CHECKSUMS:
   AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BRPickerView: 9cc11880ac79c4872d081ccb88f306224c1501d7
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -121,6 +125,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c46995798b4a007764e64c4bbf279648809bc930
+PODFILE CHECKSUM: c22ff421614bb8c05ae3687e39733a6af77c9367
 
 COCOAPODS: 1.10.1

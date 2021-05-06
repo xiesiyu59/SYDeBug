@@ -26,5 +26,6 @@ target 'SYDeBug' do
   pod 'iCarousel'
   pod 'RATreeView'
   pod 'BRPickerView'
+  pod 'DZNEmptyDataSet'
  
 end

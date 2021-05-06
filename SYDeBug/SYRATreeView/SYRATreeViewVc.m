@@ -60,9 +60,6 @@
 
     self.modelArray = [NSMutableArray array];
     [self.modelArray addObject:shanxi];
-    [self.modelArray addObject:shanxi];
-    [self.modelArray addObject:shanxi];
-    [self.modelArray addObject:shanxi];
     
     
     

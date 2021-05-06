@@ -173,7 +173,7 @@ static NSString *identifier = @"cell";
     if (indexPath.row == 0) {
         //XibViewController //SYiCarouselViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController  //SGPagingIndexVc
         //CodeInputViewController //MakeAQuestionViewController // SYRATreeViewVc //SYBRPickerViewVc
-        [self pushToViewControllerWithName:@"SYRATreeViewVc" param:nil];
+        [self pushToViewControllerWithName:@"SYBRPickerViewVc" param:nil];
         
     }else if (indexPath.row == 1){
         

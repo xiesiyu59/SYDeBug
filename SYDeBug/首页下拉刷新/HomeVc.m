@@ -11,11 +11,12 @@
 #import "SYRefreshFooter.h"
 #import "TableView.h"
 #import "SYProgressHUD.h"
+#import "SYToast.h"
 
 static NSString *identifier = @"cell";
 
 
-@interface HomeVc () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeVc () <UITableViewDelegate, UITableViewDataSource,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>
 
 @property (nonatomic, strong)NSMutableArray *dataArray;
 @property (nonatomic, strong)TableView *xsyTableView;
@@ -53,7 +54,7 @@ static NSString *identifier = @"cell";
     self.indexPage = 1;
     self.statusTag = 0;
     [self initWithInitialization];
-    [self initWithinitializationDataSourceFooter:NO];
+    
 }
 
 #pragma mark - <初始化数据源>
@@ -102,6 +103,9 @@ static NSString *identifier = @"cell";
     [self.xsyTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    self.xsyTableView.emptyDataSetDelegate = self;
+    self.xsyTableView.emptyDataSetSource = self;
     
     self.headerView = [[UIView alloc] initWithFrame:CGRectZero];
     self.headerView.backgroundColor = [UIColor orangeColor];
@@ -221,5 +225,75 @@ static NSString *identifier = @"cell";
     NSLog(@"点击");
     [self sy_screenFlip];
 }
+
+
+#pragma mark - DZNEmptyDataSetSource
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    
+    return IMG(@"page_reminding_chucuo");
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *title = @"暂无数据";
+    NSDictionary *attributes = @{
+        NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0f],
+        NSForegroundColorAttributeName:[UIColor colorWithHexString:@"#575757"]
+    };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes];
+}
+
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView {
+
+    NSString *text = @"暂无数据，可能是因为某些未知原因";
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName:[UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName:paragraph
+                                 };
+
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+
+    NSString *text = @"网络不给力，请点击重试哦~";
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text];
+    //设置所有字体大小为 #15
+    [attStr addAttribute:NSFontAttributeName
+                   value:[UIFont systemFontOfSize:15.0]
+                   range:NSMakeRange(0, text.length)];
+    //设置所有字体颜色为浅灰色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:[UIColor lightGrayColor]
+                   range:NSMakeRange(0, text.length)];
+    //设置指定4个字体为蓝色
+    [attStr addAttribute:NSForegroundColorAttributeName
+                   value:[UIColor colorWithHexString:@"#007EE5"]
+                   range:NSMakeRange(7, 4)];
+    return attStr;
+}
+
+//- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+//    return IMG(@"liu");
+//}
+
+#pragma mark - DZNEmptyDataSetDelegate
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView{
+    return YES;
+}
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
+    //刷新数据
+    [self initWithinitializationDataSourceFooter:NO];
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
+    return kScreenTopIsX;
+}
+
 
 @end
