@@ -20,6 +20,7 @@
 #import "UIView+SYView.h"
 #import "SYPromptOptionView.h"
 #import "SYCountDownButton.h"
+#import "UITextView+Placeholder.h"
 
 #define gcdButton @"gcdButton"
 
@@ -29,7 +30,7 @@
 
 @property (nonatomic, strong) SYCountDownButton *countButton;
 @property (nonatomic, strong) UITextField *textField;
-
+@property (nonatomic, strong) UITextView *textView;
 
 @end
 
@@ -210,6 +211,21 @@
     [self.view addSubview:self.textField];
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(jurisdictionButton.mas_bottom).offset(10);
+        make.centerX.equalTo(self.view);
+        make.width.mas_equalTo(kScreenWidth-32);
+        make.height.mas_equalTo(40);
+    }];
+    
+    
+    
+    self.textView = [[UITextView alloc] init];
+    [self.textView syAddPlaceholder:@"请输入点什么"];
+    self.textView.syMaxLength = 10;
+    [self.textView setLXCornerdious:4];
+    [self.textView setLXBorderWidth:1.0f borderColor:[UIColor blackColor]];
+    [self.view addSubview:self.textView];
+    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.textField.mas_bottom).offset(10);
         make.centerX.equalTo(self.view);
         make.width.mas_equalTo(kScreenWidth-32);
         make.height.mas_equalTo(40);

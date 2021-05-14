@@ -96,12 +96,17 @@
 		BAA7454125BE95310025FD48 /* SYValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA7454025BE95310025FD48 /* SYValidationCodeView.m */; };
 		BAA76CD6248A275A00D40368 /* SYVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */; };
 		BAAD625A25EF862E00983EDB /* MakeAQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAD625925EF862E00983EDB /* MakeAQuestionViewController.m */; };
+		BAB2F5B6264E58DB003A6C56 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F5B5264E58DB003A6C56 /* UITextView+Placeholder.m */; };
 		BABB317A24BFE878001B40E1 /* sytoast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317424BFE878001B40E1 /* sytoast_success.png */; };
 		BABB317B24BFE878001B40E1 /* sytoast_error.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317524BFE878001B40E1 /* sytoast_error.png */; };
 		BABB317C24BFE878001B40E1 /* sytoast_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317624BFE878001B40E1 /* sytoast_success@2x.png */; };
 		BABB317D24BFE878001B40E1 /* sytoast_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317724BFE878001B40E1 /* sytoast_error@3x.png */; };
 		BABB317E24BFE878001B40E1 /* sytoast_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317824BFE878001B40E1 /* sytoast_error@2x.png */; };
 		BABB317F24BFE878001B40E1 /* sytoast_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317924BFE878001B40E1 /* sytoast_success@3x.png */; };
+		BAC19C52264B75DC000B0369 /* SYDrawingBoardVc.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C51264B75DC000B0369 /* SYDrawingBoardVc.m */; };
+		BAC19C56264B75FB000B0369 /* SYDrawingBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C55264B75FB000B0369 /* SYDrawingBoardView.m */; };
+		BAC19C59264B7817000B0369 /* SYDrawingBoardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C58264B7817000B0369 /* SYDrawingBoardToolView.m */; };
+		BAC19C5C264BB4F4000B0369 /* SYDrawingBoardColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC19C5B264BB4F4000B0369 /* SYDrawingBoardColorView.m */; };
 		BAC3C86123680F310002AF82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3C86023680F310002AF82 /* AppDelegate.m */; };
 		BAC3C86423680F310002AF82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3C86323680F310002AF82 /* ViewController.m */; };
 		BAC3C86723680F310002AF82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC3C86523680F310002AF82 /* Main.storyboard */; };
@@ -352,12 +357,22 @@
 		BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYVideoPlayerControlView.m; sourceTree = "<group>"; };
 		BAAD625825EF862E00983EDB /* MakeAQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeAQuestionViewController.h; sourceTree = "<group>"; };
 		BAAD625925EF862E00983EDB /* MakeAQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeAQuestionViewController.m; sourceTree = "<group>"; };
+		BAB2F5B4264E58DB003A6C56 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		BAB2F5B5264E58DB003A6C56 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		BABB317424BFE878001B40E1 /* sytoast_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sytoast_success.png; sourceTree = "<group>"; };
 		BABB317524BFE878001B40E1 /* sytoast_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sytoast_error.png; sourceTree = "<group>"; };
 		BABB317624BFE878001B40E1 /* sytoast_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sytoast_success@2x.png"; sourceTree = "<group>"; };
 		BABB317724BFE878001B40E1 /* sytoast_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sytoast_error@3x.png"; sourceTree = "<group>"; };
 		BABB317824BFE878001B40E1 /* sytoast_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sytoast_error@2x.png"; sourceTree = "<group>"; };
 		BABB317924BFE878001B40E1 /* sytoast_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sytoast_success@3x.png"; sourceTree = "<group>"; };
+		BAC19C50264B75DC000B0369 /* SYDrawingBoardVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDrawingBoardVc.h; sourceTree = "<group>"; };
+		BAC19C51264B75DC000B0369 /* SYDrawingBoardVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDrawingBoardVc.m; sourceTree = "<group>"; };
+		BAC19C54264B75FB000B0369 /* SYDrawingBoardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDrawingBoardView.h; sourceTree = "<group>"; };
+		BAC19C55264B75FB000B0369 /* SYDrawingBoardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDrawingBoardView.m; sourceTree = "<group>"; };
+		BAC19C57264B7817000B0369 /* SYDrawingBoardToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDrawingBoardToolView.h; sourceTree = "<group>"; };
+		BAC19C58264B7817000B0369 /* SYDrawingBoardToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDrawingBoardToolView.m; sourceTree = "<group>"; };
+		BAC19C5A264BB4F4000B0369 /* SYDrawingBoardColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDrawingBoardColorView.h; sourceTree = "<group>"; };
+		BAC19C5B264BB4F4000B0369 /* SYDrawingBoardColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYDrawingBoardColorView.m; sourceTree = "<group>"; };
 		BAC3C85C23680F310002AF82 /* SYDeBug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYDeBug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC3C85F23680F310002AF82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAC3C86023680F310002AF82 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1013,6 +1028,15 @@
 			path = SYJPVideoPlayerControlView;
 			sourceTree = "<group>";
 		};
+		BAB2F5B3264E588C003A6C56 /* UITextViewPlaceholder */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2F5B4264E58DB003A6C56 /* UITextView+Placeholder.h */,
+				BAB2F5B5264E58DB003A6C56 /* UITextView+Placeholder.m */,
+			);
+			path = UITextViewPlaceholder;
+			sourceTree = "<group>";
+		};
 		BABB317324BFE878001B40E1 /* sytoast_icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1048,29 @@
 				BABB317924BFE878001B40E1 /* sytoast_success@3x.png */,
 			);
 			path = sytoast_icon;
+			sourceTree = "<group>";
+		};
+		BAC19C4F264B75C6000B0369 /* SYDrawingBoardVc */ = {
+			isa = PBXGroup;
+			children = (
+				BAC19C50264B75DC000B0369 /* SYDrawingBoardVc.h */,
+				BAC19C51264B75DC000B0369 /* SYDrawingBoardVc.m */,
+				BAC19C53264B75E1000B0369 /* SYDrawingBoardView */,
+			);
+			path = SYDrawingBoardVc;
+			sourceTree = "<group>";
+		};
+		BAC19C53264B75E1000B0369 /* SYDrawingBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				BAC19C54264B75FB000B0369 /* SYDrawingBoardView.h */,
+				BAC19C55264B75FB000B0369 /* SYDrawingBoardView.m */,
+				BAC19C57264B7817000B0369 /* SYDrawingBoardToolView.h */,
+				BAC19C58264B7817000B0369 /* SYDrawingBoardToolView.m */,
+				BAC19C5A264BB4F4000B0369 /* SYDrawingBoardColorView.h */,
+				BAC19C5B264BB4F4000B0369 /* SYDrawingBoardColorView.m */,
+			);
+			path = SYDrawingBoardView;
 			sourceTree = "<group>";
 		};
 		BAC3C85323680F310002AF82 = {
@@ -1047,6 +1094,7 @@
 		BAC3C85E23680F310002AF82 /* SYDeBug */ = {
 			isa = PBXGroup;
 			children = (
+				BAC19C4F264B75C6000B0369 /* SYDrawingBoardVc */,
 				BA2706C72644D7B600835315 /* SYTableViewController */,
 				BA6D637B2611AF6F0059BA61 /* SYBRPickerView */,
 				BA6D634F26119EC00059BA61 /* SYRATreeView */,
@@ -1366,6 +1414,7 @@
 		BAFC849F2477D4F4000C525F /* YYCache */ = {
 			isa = PBXGroup;
 			children = (
+				BAB2F5B3264E588C003A6C56 /* UITextViewPlaceholder */,
 				BA8782BC25B12C8B0003AFB5 /* SYCountDownButton */,
 				BAFA4A1324C16EE700F8B0F1 /* SYPromptOptionView */,
 				BAFA4A0924C16C3100F8B0F1 /* SYView */,
@@ -1626,6 +1675,7 @@
 				BA0D5AC1248785B100DD9D99 /* UITableViewCell+WebVideoCache.m in Sources */,
 				BAE62FE425B9744200BFE520 /* UIView+SGPagingView.m in Sources */,
 				BA0D5ACE248785CB00DD9D99 /* PTSSYHomeHotMainController.m in Sources */,
+				BAC19C59264B7817000B0369 /* SYDrawingBoardToolView.m in Sources */,
 				BA47EE7B24E3C77B00FC85BD /* SYGuideMaskViewController.m in Sources */,
 				BAE62FED25B9756900BFE520 /* UIScrollView+GestureConflict.m in Sources */,
 				BAEACAF2249B387C0081CD22 /* XCPhotoBrowser.m in Sources */,
@@ -1648,6 +1698,7 @@
 				BAE62FC925B972A000BFE520 /* SGPagingIndexVc.m in Sources */,
 				BAFD2A1E248F6E5000D91EE2 /* FileDownloadCell.m in Sources */,
 				BAC3C86423680F310002AF82 /* ViewController.m in Sources */,
+				BAC19C5C264BB4F4000B0369 /* SYDrawingBoardColorView.m in Sources */,
 				BAEACB18249B3D070081CD22 /* NYXProgressiveImageView.m in Sources */,
 				BA0D5AB3248785B100DD9D99 /* JPVideoPlayerResourceLoader.m in Sources */,
 				BA170333247E50C2006620F2 /* AdModel.m in Sources */,
@@ -1668,6 +1719,7 @@
 				BAEACB1C249B3D070081CD22 /* UIImage+Blurring.m in Sources */,
 				BA6D635D2611A1AA0059BA61 /* SYTreeViewCell.m in Sources */,
 				BAA5B96C23794E9100BDBE52 /* OnPullMsgView.m in Sources */,
+				BAC19C56264B75FB000B0369 /* SYDrawingBoardView.m in Sources */,
 				BA975E0A24AD7FE3003FEE71 /* PrivacyPermissionManager.m in Sources */,
 				BAF12F9824BD4A3800DAE099 /* TimeDHMSModel.m in Sources */,
 				BA2706DB2645091100835315 /* UIView+SYDefaultView.m in Sources */,
@@ -1694,6 +1746,7 @@
 				BAC3C86123680F310002AF82 /* AppDelegate.m in Sources */,
 				BAEACB23249B3D070081CD22 /* UIImage+Reflection.m in Sources */,
 				BAFA4A0F24C16CEB00F8B0F1 /* UIView+SYView.m in Sources */,
+				BAB2F5B6264E58DB003A6C56 /* UITextView+Placeholder.m in Sources */,
 				BA0D5AB5248785B100DD9D99 /* JPVideoPlayerCacheFile.m in Sources */,
 				BACE86C724BBEDC800B85AE1 /* TableView.m in Sources */,
 				BAFD29F6248F262200D91EE2 /* RespondModel.m in Sources */,
@@ -1718,6 +1771,7 @@
 				BA8782BF25B12CA90003AFB5 /* SYCountDownButton.m in Sources */,
 				BAEACB21249B3D070081CD22 /* UIImage+Rotating.m in Sources */,
 				BAE62FE725B9744200BFE520 /* SGPageTitleView.m in Sources */,
+				BAC19C52264B75DC000B0369 /* SYDrawingBoardVc.m in Sources */,
 				BA2706D62645042800835315 /* SYTableViewCell.m in Sources */,
 				BAA3FF83237AA8FA00E122BE /* NSDictionary+ZXPUnicode.m in Sources */,
 				BAAD625A25EF862E00983EDB /* MakeAQuestionViewController.m in Sources */,
