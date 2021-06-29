@@ -16,5 +16,9 @@ ${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SJBaseVideoPlayer/SJBaseVideoPlayer.framework
+${BUILT_PRODUCTS_DIR}/SJUIKit/SJUIKit.framework
+${BUILT_PRODUCTS_DIR}/SJVideoPlayer/SJVideoPlayer.framework
 ${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework
+${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework
 ${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework

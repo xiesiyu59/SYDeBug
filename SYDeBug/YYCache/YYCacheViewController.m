@@ -21,6 +21,7 @@
 #import "SYPromptOptionView.h"
 #import "SYCountDownButton.h"
 #import "UITextView+Placeholder.h"
+#import "SYCustomButton.h"
 
 #define gcdButton @"gcdButton"
 
@@ -53,6 +54,7 @@
     [super viewDidLoad];
     self.title = @"存储方式";
     [self initWithInitialization];
+    [self rac];
 }
 
 #pragma mark - <初始化界面>
@@ -190,12 +192,20 @@
     tipsBoxButton.backgroundColor = [UIColor yellowColor];
     tipsBoxButton.tag = 6;
     [self.view addSubview:tipsBoxButton];
-    [tipsBoxButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [tipsBoxButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [tipsBoxButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(toastButton.mas_bottom).offset(10);
         make.left.equalTo(toastButton.mas_left);
         make.width.mas_equalTo(kScreenWidth/3);
     }];
+    
+    //添加事件
+    [[tipsBoxButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [SYPromptOptionView showWithContentStr:@"提示选项框" successTitle:@"确定" successBlock:^{
+            NSLog(@"成功");
+        }cancelTitle:@"" cancelBlock:nil];
+    }];
+    
     
     
     NSLog(@"%@",[self compareCurrentTime:@"2020-01-07 14:20:00"]);
@@ -231,8 +241,43 @@
         make.height.mas_equalTo(40);
     }];
     
+    
+    SYCustomButton *coustomBtn = [[SYCustomButton alloc] init];
+    coustomBtn.backgroundColor = [UIColor orangeColor];
+    coustomBtn.image = [UIImage imageNamed:@"page_reminding_chucuo"];
+    coustomBtn.title = @"我是按钮";
+    coustomBtn.font = [UIFont systemFontOfSize:50];
+    [coustomBtn setCoustBtnAlignement:SYImageLeftTitleRight itemSpace:4 image:coustomBtn.image title:coustomBtn.title];
+    coustomBtn.tag = 7;
+    [coustomBtn addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:coustomBtn];
+    [coustomBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.textView.mas_bottom).offset(10);
+        make.centerX.equalTo(self.view);
+    }];
+    
+    
+    
 }
 
+- (void)rac{
+    
+    //监听文本输入
+    [[self.textField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"rac%@",x);
+    }];
+    //监听事件
+    [[self.textField rac_signalForControlEvents:UIControlEventEditingDidEnd] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        NSLog(@"输入结束");
+    }];
+    //添加条件 --  下面表示输入文字长度 > 10 时才会调用subscribeNext
+    [[self.textField.rac_textSignal filter:^BOOL(NSString * _Nullable value) {
+        return value.length > 3;
+    }] subscribeNext:^(NSString * _Nullable x) {
+        NSLog(@"大于3了%@",x);
+    }];
+    
+}
 
 #pragma mark - <UITextFieldDelegate>
 - (void)textFieldChange:(UITextField *)textField{
@@ -362,6 +407,9 @@
         [SYPromptOptionView showWithContentStr:@"提示选项框" successTitle:@"确定" successBlock:^{
             NSLog(@"成功");
         }cancelTitle:@"" cancelBlock:nil];
+    }else if (sender.tag == 7){
+        
+        NSLog(@"自定义按钮");
     }
     
 }

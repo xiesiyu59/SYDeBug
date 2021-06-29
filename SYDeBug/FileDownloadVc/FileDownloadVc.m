@@ -10,7 +10,7 @@
 #import "SYDownloaderManger.h"
 #import <SDWebImage/SDWebImage.h>
 #import "FileDownloadCell.h"
-#import "XCPhotoBrowser.h"
+#import "SYPhotoBrowserVc.h"
 #import "UIView+SYView.h"
 
 
@@ -127,7 +127,7 @@ static NSString *identifier = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FileDownloadCell *cell = (FileDownloadCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [XCPhotoBrowser showWithDataSource:self.imageArray currentIndex:indexPath.row imageView:cell.fileImageView currentVc:self];
+    [SYPhotoBrowserVc showWithDataSource:self.imageArray currentIndex:indexPath.row imageView:cell.fileImageView type:SYPhotoBrowserTypeUrl currentVc:self];
 }
 
 //Head

@@ -13,6 +13,7 @@
 #import "SYProgressHUD.h"
 #import "SYToast.h"
 
+
 static NSString *identifier = @"cell";
 
 
@@ -24,6 +25,7 @@ static NSString *identifier = @"cell";
 @property (nonatomic, assign)NSInteger indexPage;
 @property (nonatomic, assign)NSInteger statusTag;
 @property (nonatomic, assign)CGFloat kHeaderImageHeight;
+
 
 @end
 
@@ -48,12 +50,15 @@ static NSString *identifier = @"cell";
     return self;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"首页";
     self.indexPage = 1;
     self.statusTag = 0;
     [self initWithInitialization];
+    
     
 }
 
@@ -107,6 +112,8 @@ static NSString *identifier = @"cell";
     self.xsyTableView.emptyDataSetDelegate = self;
     self.xsyTableView.emptyDataSetSource = self;
     
+    
+   
     self.headerView = [[UIView alloc] initWithFrame:CGRectZero];
     self.headerView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.headerView];
@@ -115,6 +122,8 @@ static NSString *identifier = @"cell";
         make.height.mas_equalTo(self.kHeaderImageHeight);
     }];
     
+    
+   
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"按钮" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -222,7 +231,7 @@ static NSString *identifier = @"cell";
 
 - (void)buttonClick:(UIButton *)sender{
     
-    NSLog(@"点击");
+    [SYToast showWithMessage:@"转"];
     [self sy_screenFlip];
 }
 

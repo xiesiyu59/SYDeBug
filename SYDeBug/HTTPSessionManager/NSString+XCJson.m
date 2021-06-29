@@ -1,9 +1,9 @@
 //
 //  NSString+XCJson.m
-//  消汇邦
+//  SYDeBug
 //
-//  Created by 1244 on 2017/9/12.
-//  Copyright © 2017年 深圳消汇邦成都分公司. All rights reserved.
+//  Created by xiesiyu on 2020/6/9.
+//  Copyright © 2020 xiesiyu. All rights reserved.
 //
 
 #import "NSString+XCJson.h"

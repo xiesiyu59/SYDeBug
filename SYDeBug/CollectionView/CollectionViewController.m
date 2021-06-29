@@ -7,7 +7,7 @@
 //
 
 #import "CollectionViewController.h"
-#import "XCPhotoBrowser.h"
+#import "SYPhotoBrowserVc.h"
 
 @interface CollectionViewController ()  <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -34,15 +34,15 @@
 
 #pragma mark - <初始化数据源>
 - (void)initWithinitializationDataSource {
-    self.imageArray= @[@"http://cdn.gaosainet.com/uploads/img/20200602/fb6628722edd42a4f9a01fe0bce51718.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200602/38526e0920189c5e4ac5323f77ffd09c.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200602/e44651f4142b13d6ebe53d73ee723228.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200602/c7e0c77a8f66366a8c6a3345f62d154a.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200602/d93ede141c68f12327a894f749eb05b6.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200602/cc1d1a538165520eb5321f6d8a383918.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200513/4bf1233acb278be65a1f1cbbc855cbd7.jpg",
-                       @"http://cdn.gaosainet.com/uploads/img/20200514/4e4383a55cd9ae89efd0640f6d7dba08.jpg",
-                       @"http://www.17qq.com/img_biaoqing/68341470.jpeg",
+    self.imageArray= @[@"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201306%2F25%2F20130625150506_fiJ2r.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508469&t=d3bd5db5cf17cc1c0ee26b51afd0f861",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201209%2F08%2F20120908134318_YVAwx.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508469&t=e13806b9615d1bd53e933f232f168c24",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1309%2F25%2Fc49%2F26316176_26316176_1380092693834_mthumb.jpg&refer=http%3A%2F%2Fimg.pconline.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508469&t=ee5d4b01eee839350de6807081aa93ba",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs8.sinaimg.cn%2Fbmiddle%2F4d37ae624483dcec7caa7&refer=http%3A%2F%2Fs8.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508469&t=0b37a0a0e2c6fb98eebc5fe3a4b4e37c",
+                       @"https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/1b4c510fd9f9d72aa19da8a7d52a2834359bbb8b.jpg",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1503%2F19%2Fc15%2F4117546_4117546_1426763500796_mthumb.jpg&refer=http%3A%2F%2Fimg.pconline.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508524&t=ca1e7b31d39dc4a546e5fc12f71c245b",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F7258014636%2F0&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508524&t=5734adbdda06bf5e2d6ce8c7c62d2b97",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic27.nipic.com%2F20130312%2F12058334_175946381000_2.jpg&refer=http%3A%2F%2Fpic27.nipic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508524&t=db12eb1bb748574dcd9e9494a1e8d9ca",
+                       @"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fyouimg1.c-ctrip.com%2Ftarget%2Ftg%2F035%2F063%2F726%2F3ea4031f045945e1843ae5156749d64c.jpg&refer=http%3A%2F%2Fyouimg1.c-ctrip.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1626508566&t=2fbee5ab9e0dbb4798a6c4543a0ae815",
     ];
     
 }
@@ -125,7 +125,10 @@
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell.contentView);
     }];
-    [XCPhotoBrowser showWithDataSource:self.imageArray currentIndex:indexPath.row imageView:imageView currentVc:self];
+    
+   
+    [SYPhotoBrowserVc showWithDataSource:self.imageArray currentIndex:indexPath.row imageView:imageView type:SYPhotoBrowserTypeUrl currentVc:self];
+    
     
 }
 

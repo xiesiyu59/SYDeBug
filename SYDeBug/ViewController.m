@@ -72,7 +72,11 @@ static NSString *identifier = @"cell";
     
     self.xsyTableView.tableFooterView = [UIView new];
     [self.xsyTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:identifier];
-    
+    if (@available(iOS 11.0, *)) {
+        self.xsyTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     [self.view addSubview:self.xsyTableView];
     [self.xsyTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -173,7 +177,7 @@ static NSString *identifier = @"cell";
     if (indexPath.row == 0) {
         //XibViewController //SYiCarouselViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController  //SGPagingIndexVc
         //CodeInputViewController //MakeAQuestionViewController // SYRATreeViewVc //SYBRPickerViewVc  //TableViewController //CollectionViewController //SYDrawingBoardVc
-        [self pushToViewControllerWithName:@"SYDrawingBoardVc" param:nil];
+        [self pushToViewControllerWithName:@"SystemPhotoViewController" param:@{@"type":@"1"}];
         
     }else if (indexPath.row == 1){
         

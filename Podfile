@@ -27,5 +27,8 @@ target 'SYDeBug' do
   pod 'RATreeView'
   pod 'BRPickerView'
   pod 'DZNEmptyDataSet'
+  pod 'SJBaseVideoPlayer', :git => 'https://gitee.com/changsanjiang/SJBaseVideoPlayer.git'
+  pod 'SJVideoPlayer', :git => 'https://gitee.com/changsanjiang/SJVideoPlayer.git'
+
  
 end

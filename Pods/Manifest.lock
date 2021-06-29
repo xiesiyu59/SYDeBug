@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - AlipaySDK-iOS (15.7.4)
+  - AlipaySDK-iOS (15.7.9)
   - Aspects (1.4.1)
   - BRPickerView (2.7.3):
     - BRPickerView/AddressPickerView (= 2.7.3)
@@ -30,30 +30,90 @@ PODS:
     - BRPickerView/Base
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
-  - FLEX (4.1.1)
+  - FLEX (4.4.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - FSCalendar (2.8.1)
-  - GBDeviceInfo (6.4.0):
-    - GBDeviceInfo/Core (= 6.4.0)
-  - GBDeviceInfo/Core (6.4.0)
+  - FSCalendar (2.8.2)
+  - GBDeviceInfo (6.6.0):
+    - GBDeviceInfo/Core (= 6.6.0)
+  - GBDeviceInfo/Core (6.6.0)
   - iCarousel (1.8.3)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.4.3)
+  - MJRefresh (3.6.1)
   - PPCounter (0.6.0)
   - RATreeView (2.1.2)
   - ReactiveObjC (3.1.1)
-  - SDCycleScrollView (1.80):
+  - SDCycleScrollView (1.82):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.8.1):
-    - SDWebImage/Core (= 5.8.1)
-  - SDWebImage/Core (5.8.1)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SJBaseVideoPlayer (3.6.3):
+    - Masonry
+    - SJBaseVideoPlayer/AVPlayer (= 3.6.3)
+    - SJBaseVideoPlayer/Common (= 3.6.3)
+    - SJUIKit/AttributesFactory (>= 0.0.0.38)
+    - SJUIKit/ObserverHelper
+    - SJUIKit/Queues
+    - SJUIKit/SQLite3
+  - SJBaseVideoPlayer/AVPlayer (3.6.3):
+    - Masonry
+    - SJBaseVideoPlayer/Common
+    - SJUIKit/AttributesFactory (>= 0.0.0.38)
+    - SJUIKit/ObserverHelper
+    - SJUIKit/Queues
+    - SJUIKit/SQLite3
+  - SJBaseVideoPlayer/Common (3.6.3):
+    - Masonry
+    - SJBaseVideoPlayer/ResourceLoader
+    - SJUIKit/AttributesFactory (>= 0.0.0.38)
+    - SJUIKit/ObserverHelper
+    - SJUIKit/Queues
+    - SJUIKit/SQLite3
+  - SJBaseVideoPlayer/ResourceLoader (3.6.3):
+    - Masonry
+    - SJUIKit/AttributesFactory (>= 0.0.0.38)
+    - SJUIKit/ObserverHelper
+    - SJUIKit/Queues
+    - SJUIKit/SQLite3
+  - SJUIKit/AttributesFactory (0.0.0.57):
+    - SJUIKit/AttributesFactory/Deprecated (= 0.0.0.57)
+    - SJUIKit/AttributesFactory/UIKitText (= 0.0.0.57)
+  - SJUIKit/AttributesFactory/Deprecated (0.0.0.57)
+  - SJUIKit/AttributesFactory/UIKitText (0.0.0.57)
+  - SJUIKit/ObserverHelper (0.0.0.57)
+  - SJUIKit/Queues (0.0.0.57)
+  - SJUIKit/SQLite3 (0.0.0.57):
+    - SJUIKit/SQLite3/Core (= 0.0.0.57)
+    - SJUIKit/SQLite3/Protocol (= 0.0.0.57)
+    - YYModel
+  - SJUIKit/SQLite3/Core (0.0.0.57):
+    - SJUIKit/SQLite3/Protocol
+    - YYModel
+  - SJUIKit/SQLite3/Protocol (0.0.0.57):
+    - YYModel
+  - SJVideoPlayer (3.3.2):
+    - SJBaseVideoPlayer (>= 3.6.0)
+    - SJVideoPlayer/Common (= 3.3.2)
+    - SJVideoPlayer/ControlLayers (= 3.3.2)
+    - SJVideoPlayer/ResourceLoader (= 3.3.2)
+  - SJVideoPlayer/Common (3.3.2):
+    - Masonry
+    - SJBaseVideoPlayer (>= 3.6.0)
+    - SJUIKit/AttributesFactory
+    - SJVideoPlayer/ResourceLoader
+  - SJVideoPlayer/ControlLayers (3.3.2):
+    - SJBaseVideoPlayer (>= 3.6.0)
+    - SJVideoPlayer/Common
+  - SJVideoPlayer/ResourceLoader (3.3.2):
+    - SJBaseVideoPlayer (>= 3.6.0)
   - WechatOpenSDK (1.8.7.1)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
@@ -75,6 +135,8 @@ DEPENDENCIES:
   - ReactiveObjC
   - SDCycleScrollView
   - SDWebImage
+  - SJBaseVideoPlayer (from `https://gitee.com/changsanjiang/SJBaseVideoPlayer.git`)
+  - SJVideoPlayer (from `https://gitee.com/changsanjiang/SJVideoPlayer.git`)
   - WechatOpenSDK
   - YYKit
 
@@ -99,32 +161,52 @@ SPEC REPOS:
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
+    - SJUIKit
     - WechatOpenSDK
     - YYKit
+    - YYModel
+
+EXTERNAL SOURCES:
+  SJBaseVideoPlayer:
+    :git: https://gitee.com/changsanjiang/SJBaseVideoPlayer.git
+  SJVideoPlayer:
+    :git: https://gitee.com/changsanjiang/SJVideoPlayer.git
+
+CHECKOUT OPTIONS:
+  SJBaseVideoPlayer:
+    :commit: 532d1e58a5118079343afb75d3b393cb3ebc7816
+    :git: https://gitee.com/changsanjiang/SJBaseVideoPlayer.git
+  SJVideoPlayer:
+    :commit: 6a4c1716ebdd30f21d0fdc127b32c8630aed8a32
+    :git: https://gitee.com/changsanjiang/SJVideoPlayer.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  AlipaySDK-iOS: 8659cdb4403de7e5f26ad8b699864a9cbe53384c
+  AlipaySDK-iOS: 94ff4c0e17c5e7d126b8207596d5033006534c25
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BRPickerView: 9cc11880ac79c4872d081ccb88f306224c1501d7
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FLEX: 81096107977a09836eb440173010ceeef01105d6
+  FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  GBDeviceInfo: f29249891446a392e64b9c9bbef9554aad2a6beb
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  GBDeviceInfo: ed0db16230d2fa280e1cbb39a5a7f60f6946aaec
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
   PPCounter: da37c0d8bfeeffe7ef4c331468203e17f2e30fbf
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SJBaseVideoPlayer: 99957bb0d0fe1ccb8d6710bd9db9f52640c56a32
+  SJUIKit: 55e5ae2beee094abab143f45addc23690883040b
+  SJVideoPlayer: 3a271ff92c7b9d611c537655fd1edcbae18b8587
   WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c22ff421614bb8c05ae3687e39733a6af77c9367
+PODFILE CHECKSUM: cf58ef58c7dcca90d97d7f4543d1363b653e7350
 
 COCOAPODS: 1.10.1

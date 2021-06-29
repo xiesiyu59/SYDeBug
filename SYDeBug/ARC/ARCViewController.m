@@ -45,12 +45,16 @@
                     [tempArray addObject:model];
                 }
                 [subscriber sendNext:tempArray];
+                [subscriber sendCompleted];
                 
             }else if (responseModel.code == RespondCodeError || responseModel.code == RespondCodeNotJson){
                 [subscriber sendNext:responseModel.msg];
+                [subscriber sendCompleted];
             }
         }];
-        return nil;
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"销毁了1");
+        }];
     }];
     
     RACSignal *signal2 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
@@ -64,13 +68,17 @@
                     [tempArray addObject:model];
                 }
                 [subscriber sendNext:tempArray];
+                [subscriber sendCompleted];
                 
             }else if (responseModel.code == RespondCodeError || responseModel.code == RespondCodeNotJson){
                 [subscriber sendNext:responseModel.msg];
+                [subscriber sendCompleted];
             }
         }];
 
-        return nil;
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"销毁了2");
+        }];
         
     }];
     
@@ -86,12 +94,16 @@
                     [tempArray addObject:model];
                 }
                 [subscriber sendNext:tempArray];
+                [subscriber sendCompleted];
                 
             }else if (responseModel.code == RespondCodeError || responseModel.code == RespondCodeNotJson){
                 [subscriber sendNext:responseModel.msg];
+                [subscriber sendCompleted];
             }
         }];
-        return nil;
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"销毁了3");
+        }];
         
     }];
     
