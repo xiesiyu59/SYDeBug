@@ -50,6 +50,10 @@ static NSString *identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+        NSLog(@"清空图片");
+    }];
+    
 //    NSString *name = NSLocalizedString(@"first_line", nil);
     NSString *name2 = NSLocalizedStringFromTable(@"first_line", @"Localizable", nil);
     self.dataArray = @[name2,@"淘宝详情",@"FMDB",@"金额计算",@"首页样式",@"wkWebView",@"上下切换视图",@"YYCache",@"数字动画",@"ARC",@"文件下载",@"日历"];
@@ -177,7 +181,7 @@ static NSString *identifier = @"cell";
     if (indexPath.row == 0) {
         //XibViewController //SYiCarouselViewController //CollectionViewController //SYGuideMaskViewController //LocationNoticeViewController  //SystemPhotoViewController  //SYIndexesViewController  //SYImageViewController  //SGPagingIndexVc
         //CodeInputViewController //MakeAQuestionViewController // SYRATreeViewVc //SYBRPickerViewVc  //TableViewController //CollectionViewController //SYDrawingBoardVc
-        [self pushToViewControllerWithName:@"SystemPhotoViewController" param:@{@"type":@"1"}];
+        [self pushToViewControllerWithName:@"CollectionViewController" param:nil];
         
     }else if (indexPath.row == 1){
         

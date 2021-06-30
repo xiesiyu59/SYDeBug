@@ -46,7 +46,11 @@ NS_ASSUME_NONNULL_BEGIN
  @param currentVc 当前控制器
  */
 
-+ (void)showWithDataSource:(NSArray *)dataSource currentIndex:(NSInteger)currentIndex imageView:(UIImageView *)imageView type:(SYPhotoBrowserType)type currentVc:(UIViewController *)currentVc;
++ (void)showWithDataSource:(NSArray *)dataSource
+              currentIndex:(NSInteger)currentIndex
+                 imageView:(UIImageView *)imageView
+                      type:(SYPhotoBrowserType)type
+                 currentVc:(UIViewController *)currentVc;
 
 @end
 

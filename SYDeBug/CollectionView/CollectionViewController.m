@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "SYPhotoBrowserVc.h"
 
+
 @interface CollectionViewController ()  <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong)UICollectionView *collectionView;
@@ -30,6 +31,7 @@
     
     [self initWithinitializationDataSource];
     [self initWithInitialization];
+    
 }
 
 #pragma mark - <初始化数据源>

@@ -10,7 +10,8 @@
 #import <UINavigationController+FDFullscreenPopGesture.h>
 #import "UIView+Screenshot.h"
 #import "SYPhotoCell.h"
-
+#import "SYToast.h"
+#import "SYActionSheet.h"
 
 @interface SYPhotoBrowserVc () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,SYPhotoCellDelegate>
 
@@ -106,14 +107,7 @@
     
     
     //过渡动画
-    
-//    self.statusBarShouldBeHidden = YES;
     animationDuration = .25;
-    
-//    [UIView animateWithDuration:animationDuration animations:^(void) {
-//        [self setNeedsStatusBarAppearanceUpdate];
-//    } completion:^(BOOL finished) {}];
-    
     originFrame = [self.imageView.superview convertRect:self.imageView.frame toView:[UIApplication sharedApplication].keyWindow];
     // TODO: Frame
     CGRect targetFrame = {CGPointZero, self.imageView.image.size};
@@ -127,24 +121,11 @@
     CGFloat ratio = screenRect.size.width/targetFrame.size.width;
     targetFrame.size.height = targetFrame.size.height*ratio;
     targetFrame.size.width = screenRect.size.width;
-    
-//    CGFloat sx = originFrame.size.width / targetFrame.size.width;
-//    CGFloat sy = originFrame.size.height / targetFrame.size.height;
-    
-//    CGFloat tx = -(targetFrame.size.width - sx * targetFrame.size.width)/2.f + originFrame.origin.x;
-//    CGFloat ty = -(targetFrame.size.height - sy * targetFrame.size.height)/2.f + originFrame.origin.y;
-    
-    
-    
-//    transform = CGAffineTransformMakeTranslation(tx, ty);
-//    transform = CGAffineTransformScale(transform, sx, sy);
-    
-//    self.transitionImageView.transform = transform;
+
     self.transitionImageView.frame = originFrame;
     
     [UIView animateWithDuration:animationDuration animations:^{
         self.screenImageView.alpha = 0;
-//        self.transitionImageView.transform = CGAffineTransformIdentity;
         self.transitionImageView.frame = targetFrame;
         self.transitionImageView.center = self.view.center;
         
@@ -296,30 +277,25 @@
     if (photoModel.hasQrcode) {
             [titleArr addObject:@"识别图中二维码"];
     }
-//    [titleArr addObject:@"保存图片到本地"];
-//    [YZActionSheet showActionSheetWithTitles:[titleArr copy] selected:^(NSInteger idx) {
-//        if (idx == titleArr.count - 1) {
-//            if (![[PrivacyPermissionManager sharedManager]hasBeenBannedForPhotoLibraryPermission]){
-//                    UIImageWriteToSavedPhotosAlbum(photoModel.originImage ? photoModel.originImage : photoModel.thumbImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-//            }
-//
-//        }else{
-//            [self qrcodeHandleResult:photoModel.qrCode completed:^(RespondModel *respondModel) {
-//                if (respondModel.code != 200) {
-//                    [PromptViewTwo promptTitle:respondModel.desc];
-//                }
-//            }];
-//        }
-//    }];
-    
+    [titleArr addObject:@"保存图片到本地"];
+    [SYActionSheet showWithTitle:@"操作" options:titleArr selectedBlock:^(NSInteger selectedIndex) {
+        if (selectedIndex == 0) {
+            UIImageWriteToSavedPhotosAlbum(photoModel.originImage ? photoModel.originImage : photoModel.thumbImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+
+        }else if(selectedIndex == 1){
+            [SYToast showWithMessage:@"识别二维码操作"];
+        }
+    } cancelTitle:@"取消" cancelBlock:^{
+        
+    }];
     
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
     if (error) {
-//        [PromptViewTwo promptTitle:error.localizedDescription];
+        [SYToast showWithMessage:error.localizedDescription];
     }else{
-//        [PromptViewTwo promptTitle:@"保存成功"];
+        [SYToast showWithMessage:@"保存成功"];
     }
 }
 

@@ -99,6 +99,8 @@
 		BAA7454125BE95310025FD48 /* SYValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA7454025BE95310025FD48 /* SYValidationCodeView.m */; };
 		BAA76CD6248A275A00D40368 /* SYVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */; };
 		BAAD625A25EF862E00983EDB /* MakeAQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAD625925EF862E00983EDB /* MakeAQuestionViewController.m */; };
+		BAAE01FE268C425600C370E8 /* SYActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAE01FA268C425600C370E8 /* SYActionSheet.m */; };
+		BAAE01FF268C425600C370E8 /* SYActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAE01FB268C425600C370E8 /* SYActionSheetCell.m */; };
 		BAB2F5B6264E58DB003A6C56 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB2F5B5264E58DB003A6C56 /* UITextView+Placeholder.m */; };
 		BAB618C82679DB46007C308F /* SystemPhotoDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB618C72679DB46007C308F /* SystemPhotoDetailCell.m */; };
 		BABB317A24BFE878001B40E1 /* sytoast_success.png in Resources */ = {isa = PBXBuildFile; fileRef = BABB317424BFE878001B40E1 /* sytoast_success.png */; };
@@ -369,6 +371,10 @@
 		BAA76CD5248A275A00D40368 /* SYVideoPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYVideoPlayerControlView.m; sourceTree = "<group>"; };
 		BAAD625825EF862E00983EDB /* MakeAQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeAQuestionViewController.h; sourceTree = "<group>"; };
 		BAAD625925EF862E00983EDB /* MakeAQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeAQuestionViewController.m; sourceTree = "<group>"; };
+		BAAE01FA268C425600C370E8 /* SYActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYActionSheet.m; sourceTree = "<group>"; };
+		BAAE01FB268C425600C370E8 /* SYActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYActionSheetCell.m; sourceTree = "<group>"; };
+		BAAE01FC268C425600C370E8 /* SYActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYActionSheet.h; sourceTree = "<group>"; };
+		BAAE01FD268C425600C370E8 /* SYActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYActionSheetCell.h; sourceTree = "<group>"; };
 		BAB2F5B4264E58DB003A6C56 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
 		BAB2F5B5264E58DB003A6C56 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		BAB618C62679DB46007C308F /* SystemPhotoDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemPhotoDetailCell.h; sourceTree = "<group>"; };
@@ -1071,6 +1077,17 @@
 			path = SYJPVideoPlayerControlView;
 			sourceTree = "<group>";
 		};
+		BAAE01F9268C425600C370E8 /* SYActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE01FC268C425600C370E8 /* SYActionSheet.h */,
+				BAAE01FA268C425600C370E8 /* SYActionSheet.m */,
+				BAAE01FD268C425600C370E8 /* SYActionSheetCell.h */,
+				BAAE01FB268C425600C370E8 /* SYActionSheetCell.m */,
+			);
+			path = SYActionSheet;
+			sourceTree = "<group>";
+		};
 		BAB2F5B3264E588C003A6C56 /* UITextViewPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1384,6 +1401,7 @@
 		BAEACAEF249B38710081CD22 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				BAAE01F9268C425600C370E8 /* SYActionSheet */,
 				BAD2AFFF268AE88900202980 /* SYPhotoBrowser */,
 				BAEACAF9249B3D060081CD22 /* NYXImagesKit */,
 			);
@@ -1832,12 +1850,14 @@
 				BAA5B96623794DED00BDBE52 /* GoodsDetailHeaderView.m in Sources */,
 				BA73A1EB23F235AE00701456 /* HomeVc.m in Sources */,
 				BAA3FF84237AA8FA00E122BE /* NSObject+ZXPUnicode.m in Sources */,
+				BAAE01FF268C425600C370E8 /* SYActionSheetCell.m in Sources */,
 				BAA5B96F23794EA400BDBE52 /* DownPullMsgView.m in Sources */,
 				BA0D5ABF248785B100DD9D99 /* JPMethodInjecting.m in Sources */,
 				BAEACB20249B3D070081CD22 /* UIImage+Filtering.m in Sources */,
 				BAD714F82490ABBF008705C6 /* CalendarViewController.m in Sources */,
 				BA9360D024DD23F90078EA52 /* SYColorLabel.m in Sources */,
 				BA73FB92237BDAF30082FE9B /* FMDBManager.m in Sources */,
+				BAAE01FE268C425600C370E8 /* SYActionSheet.m in Sources */,
 				BAE62FE825B9744200BFE520 /* SGPageTitleViewConfigure.m in Sources */,
 				BA6D63582611A0520059BA61 /* RaTreeModel.m in Sources */,
 				BA8C6CA326807B190015EB6B /* SJPlayerViewController.m in Sources */,

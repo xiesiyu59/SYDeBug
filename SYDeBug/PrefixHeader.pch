@@ -17,6 +17,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <GBDeviceInfo.h>
 #import <SDWebImageManager.h>
+#import <SDImageCache.h>
 #import "UIViewController+Category.h"
 #import <MJRefresh.h>
 #import "BaseClassTool.h"

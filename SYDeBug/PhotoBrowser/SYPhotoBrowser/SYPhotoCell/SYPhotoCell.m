@@ -9,7 +9,7 @@
 #import "SYPhotoCell.h"
 #import <UIView+WebCache.h>
 #import <SDWebImageIndicator.h>
-
+#import "SYToast.h"
 
 #define PhotoCellMaxScale 2.0
 #define PhotoCellMinScale 0.8
@@ -171,24 +171,47 @@
                 }];
                 
             }else{
-                //没有缩略图,加载缩略图
-                [self.imageView sd_setImageWithURL:self.photoModel.thumbImageUrl completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                    if (error) {
-                        //出错，尝试加载原图
-                        [self getOriginImageAction:nil];
-                    }else{
-                        //成功，更新Model，计算尺寸
-                        self.photoModel.thumbImage = image;
-                        [self adjustFrame];
-                        if (photoModel.type == SYPhotoBrowserTypeImage) {
+                
+                [[SDImageCache sharedImageCache] diskImageExistsWithKey:self.photoModel.originImageUrl.absoluteString completion:^(BOOL isInCache) {
+                    if (isInCache) {
+                        //有高清缓存
+                        UIImage *image = [[SDImageCache sharedImageCache]imageFromCacheForKey:self.photoModel.originImageUrl.absoluteString];
+                        if (image) {
+                            self.photoModel.originImage = image;
+                            self.imageView.image = image;
+                            [self adjustFrame];
                             self.originButton.hidden = YES;
                         }else{
-                            self.originButton.hidden = NO;
+                            
+                            self.imageView.image = self.photoModel.thumbImage;
+                            [self adjustFrame];
+                            if (photoModel.type == SYPhotoBrowserTypeImage) {
+                                self.originButton.hidden = YES;
+                            }else{
+                                self.originButton.hidden = NO;
+                            }
                         }
+                    }else{
+                        
+                        //没有缩略图,加载缩略图
+                        [self.imageView sd_setImageWithURL:self.photoModel.thumbImageUrl completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                            if (error) {
+                                //出错，尝试加载原图
+                                [self getOriginImageAction:nil];
+                            }else{
+                                //成功，更新Model，计算尺寸
+                                self.photoModel.thumbImage = image;
+                                [self adjustFrame];
+                                if (photoModel.type == SYPhotoBrowserTypeImage) {
+                                    self.originButton.hidden = YES;
+                                }else{
+                                    self.originButton.hidden = NO;
+                                }
+                            }
+                        }];
                         
                     }
                 }];
-                
             }
             
         }
@@ -218,7 +241,7 @@
             if (self.photoModel.thumbImage == nil) {
                 
                 //没有缩略图，没有原图，提示错误
-//                [PromptViewTwo promptTitle:[NSString stringWithFormat:@"获取原图失败%ld",(long)error.code]];
+                [SYToast showWithMessage:[NSString stringWithFormat:@"获取原图失败%ld",(long)error.code]];
                 if (self.photoModel.type == SYPhotoBrowserTypeImage) {
                     self.originButton.hidden = YES;
                 }else{
@@ -238,7 +261,7 @@
                 }else{
                     
                     //是点击事件，提示
-//                    [PromptViewTwo promptTitle:[NSString stringWithFormat:@"获取原图失败%ld",(long)error.code]];
+                    [SYToast showWithMessage:[NSString stringWithFormat:@"获取原图失败%ld",(long)error.code]];
                     if (self.photoModel.type == SYPhotoBrowserTypeImage) {
                         self.originButton.hidden = YES;
                     }else{
